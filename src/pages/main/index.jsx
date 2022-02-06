@@ -5,7 +5,7 @@ import { Link }                                                           from "
 import { IoIosArrowDropdownCircle }                                       from "react-icons/io";
 import { Web3 }                                                           from "web3";
 import { ethers }                                                         from "ethers";
-import { Image, Grid, GridItem, Center, Text, Link as ChakraLink }        from "@chakra-ui/react";
+import { Image, Grid, GridItem, Center, Link as ChakraLink }              from "@chakra-ui/react";
 import Btn                                                                from "../../components/btn";
 import Txt                                                                from "../../components/txt";
 import Collection                                                         from "./collection";

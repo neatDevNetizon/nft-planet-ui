@@ -1,5 +1,5 @@
-import { Grid, GridItem, Center }   from '@chakra-ui/react'
-import Emperor                      from './emperor' 
+import { Grid, GridItem }   from '@chakra-ui/react'
+import Emperor              from './emperor' 
 
 function Emperors() {
 
