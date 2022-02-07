@@ -3,33 +3,32 @@ import { CgClose }                      from "react-icons/cg";
 import Nfts                             from '../../components/nfts';
 import Txt                              from '../../components/txt';
 
-export default function Collection() {
+export default function Collection({ close }) {
   return (
     <Box
-      height= "90%"
-      width = "90%"
+      height= {window.innerHeight*0.5}
+      width = {window.innerWidth*0.9}
       border='2px outset white'
       borderRadius='30px'
       borderColor='white'
       fontSize='14px'
-      fontWeight='semibold'
-      minWidth="1000px"
-      minHeight="300px"
       bg='transparent'
     >
       <Center h="100%">
         <Grid h="100%" w="98%" templateRows='repeat(24, 1fr)' gap={1}>
           <GridItem rowSpan={4}>
             <Center h="100%">
-              <Box width="10%" />
-              <Box width="80%">
+              <Box width="5%" />
+              <Box width="90%">
                 <Txt fontSize="38px" 
                      opacity="0.5"
                      text=" YOUR COLLECTION"
                 />
               </Box>
-              <Box width="10%" align="right">
-                <CgClose color="white" size="50px"/>
+              <Box width="5%" align="right">
+                <a onClick={close} color="white">        
+                    <CgClose color="white" size="50px" />
+                </a>
               </Box>
             </Center>
           </GridItem>

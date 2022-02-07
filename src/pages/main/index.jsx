@@ -3,6 +3,7 @@ import { useState }                                                       from "
 import { useMetamask }                                                    from "use-metamask";
 import { Link }                                                           from "react-router-dom";
 import { IoIosArrowDropdownCircle }                                       from "react-icons/io";
+import Popup                                                              from 'reactjs-popup';
 import { Web3 }                                                           from "web3";
 import { ethers }                                                         from "ethers";
 import { Image, Grid, GridItem, Center, Link as ChakraLink }              from "@chakra-ui/react";
@@ -72,18 +73,30 @@ function Main() {
         </GridItem>
         <GridItem rowSpan={2} colSpan={1}>
           <Center h="100%" w="50%">
-            <Btn onClick={() => setMainRoute('mint')} 
-                 text=" MINT " 
-                 rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size="30px"/>}
-            />
+            <Popup modal 
+                   trigger={
+                      <Btn onClick={() => setMainRoute('mint')} 
+                           text=" MINT " 
+                           rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size="30px"/>}
+                      />
+                   }
+            >
+              {close => <Mint close={close} />}
+            </Popup>
           </Center>
         </GridItem>
         <GridItem rowSpan={2} colSpan={1}>
           <Center h="100%">
-            <Btn onClick={() => setMainRoute('collection')} 
-                 text=" YOUR COLLECTION " 
-                 rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size="30px"/>}
-            />
+            <Popup modal 
+                   trigger={
+                      <Btn onClick={() => setMainRoute('collection')} 
+                           text=" YOUR COLLECTION " 
+                           rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size="30px"/>}
+                      />
+                   }
+            >
+              {close => <Collection close={close} />}
+            </Popup>
           </Center>
         </GridItem>
         <GridItem rowSpan={2} colSpan={1}>
@@ -105,18 +118,8 @@ function Main() {
             }
           </Center>
         </GridItem>
-        <GridItem rowSpan={7} colSpan={4}>
-          <Center h="100%">
-            {
-              !mainRoute
-              ? <></>
-              : mainRoute === "mint"
-                ? <Mint />
-                : <Collection />
-            }
-          </Center>
-        </GridItem>
-        <GridItem rowSpan={3} colSpan={4}>
+        <GridItem rowSpan={8} colSpan={4} />
+        <GridItem rowSpan={2} colSpan={4}>
           <Center h="50%">
             <Image src="./images/discord.webp" margin="10px"/>
             <Image src="./images/twitter.webp" margin="10px"/>

@@ -20,7 +20,7 @@ function Nfts() {
             <Nft imSrc="images/nfts/3.webp" priceInMatic="134,47" nftId="3" />
         </GridItem>
         <GridItem colSpan={1} >
-            <Nft imSrc="images/nfts/3.webp" priceInMatic="45" nftId="4" />
+            <Nft imSrc="images/nfts/4.webp" priceInMatic="45" nftId="4" />
         </GridItem>
         <GridItem colSpan={1} bg="" />
         <GridItem colSpan={1} bg="" />
