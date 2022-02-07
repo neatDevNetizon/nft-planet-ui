@@ -1,9 +1,9 @@
-import { Grid, GridItem, Center, Box }  from '@chakra-ui/react';
+import { Grid, GridItem, Center, Box, IconButton }  from '@chakra-ui/react';
 import { CgClose }                      from "react-icons/cg";
 import Nfts                             from '../../components/nfts';
 import Txt                              from '../../components/txt';
 
-export default function Collection({ close }) {
+export default function Collection(props) {
   return (
     <Box
       height= {window.innerHeight*0.5}
@@ -12,6 +12,7 @@ export default function Collection({ close }) {
       borderRadius='30px'
       borderColor='white'
       fontSize='14px'
+      minHeight='400px'
       bg='transparent'
     >
       <Center h="100%">
@@ -26,9 +27,11 @@ export default function Collection({ close }) {
                 />
               </Box>
               <Box width="5%" align="right">
-                <a onClick={close} color="white">        
-                    <CgClose color="white" size="50px" />
-                </a>
+                <IconButton 
+                    onClick={props.close} 
+                    colorScheme='transparent'        
+                    icon={<CgClose color="white" size="50px" />}
+                />
               </Box>
             </Center>
           </GridItem>

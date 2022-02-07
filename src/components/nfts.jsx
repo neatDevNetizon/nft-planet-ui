@@ -8,7 +8,7 @@ function Nfts() {
       <Grid h="100%"
             w="100%" 
             templateColumns='repeat(7, 1fr)' 
-            gap={1}
+            gap={4}
       >
         <GridItem colSpan={1} >
             <Nft imSrc="images/nfts/1.webp" priceInMatic="156,45" nftId="1" />

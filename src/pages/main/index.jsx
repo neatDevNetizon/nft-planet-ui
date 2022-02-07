@@ -1,20 +1,20 @@
-// import { useEffect }                                                      from "react";
-import { useState }                                                       from "react";
+// import { useEffect, useState }                                            from "react";
+import React                                                              from 'react';
 import { useMetamask }                                                    from "use-metamask";
 import { Link }                                                           from "react-router-dom";
 import { IoIosArrowDropdownCircle }                                       from "react-icons/io";
 import Popup                                                              from 'reactjs-popup';
 import { Web3 }                                                           from "web3";
 import { ethers }                                                         from "ethers";
-import { Image, Grid, GridItem, Center, Link as ChakraLink }              from "@chakra-ui/react";
-import Btn                                                                from "../../components/btn";
+import { Image, Grid, GridItem, Center, HStack, Link as ChakraLink }      from "@chakra-ui/react";
+import { Btn }                                                            from "../../components/btn";
 import Txt                                                                from "../../components/txt";
 import Collection                                                         from "./collection";
 import Mint                                                               from "./mint";
 
 function Main() {
 
-  const [mainRoute, setMainRoute] = useState("")
+  const ref = React.createRef();
 
   const { connect, metaState } = useMetamask();
 
@@ -66,18 +66,20 @@ function Main() {
         <GridItem rowSpan={2} colSpan={1}>
           <Center h="100%">
             <Link to="/">
-              <Image src="./images/Bild6.webp" alt='logo'/>
-              <Image src="./images/Bild6_text.webp" alt='logo_text'/>
+              <HStack spacing='0px'>
+                <Image src="./images/Bild6.webp" alt='logo'/>
+                <Image src="./images/Bild6_text.webp" alt='logo_text'/>
+              </HStack>
             </Link>
           </Center>
         </GridItem>
         <GridItem rowSpan={2} colSpan={1}>
-          <Center h="100%" w="50%">
+          <Center h="100%" w="100%">
             <Popup modal 
                    trigger={
-                      <Btn onClick={() => setMainRoute('mint')} 
-                           text=" MINT " 
+                      <Btn text=" MINT " 
                            rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size="30px"/>}
+                           ref={ref}
                       />
                    }
             >
@@ -86,12 +88,12 @@ function Main() {
           </Center>
         </GridItem>
         <GridItem rowSpan={2} colSpan={1}>
-          <Center h="100%">
+          <Center h="100%" w="100%">
             <Popup modal 
                    trigger={
-                      <Btn onClick={() => setMainRoute('collection')} 
-                           text=" YOUR COLLECTION " 
+                      <Btn text=" YOUR COLLECTION " 
                            rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size="30px"/>}
+                           ref={ref}
                       />
                    }
             >
@@ -121,9 +123,15 @@ function Main() {
         <GridItem rowSpan={8} colSpan={4} />
         <GridItem rowSpan={2} colSpan={4}>
           <Center h="50%">
-            <Image src="./images/discord.webp" margin="10px"/>
-            <Image src="./images/twitter.webp" margin="10px"/>
-            <Image src="./images/telegram.webp" margin="10px"/>
+            <ChakraLink href="https://discord.com/">
+              <Image src="./images/discord.webp" margin="10px"/>
+            </ChakraLink>
+            <ChakraLink href="https://twitter.com/">
+              <Image src="./images/twitter.webp" margin="10px"/>
+            </ChakraLink>
+            <ChakraLink href="https://telegram.org/">
+              <Image src="./images/telegram.webp" margin="10px"/>
+            </ChakraLink>
           </Center>
         </GridItem>
       </Grid>

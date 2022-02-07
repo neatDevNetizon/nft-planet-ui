@@ -1,18 +1,68 @@
-import { FaArrowAltCircleRight }  from "react-icons/fa"
-import { Box }   				  from "@chakra-ui/react";
-import Btn 						  from "./btn"
+import { useState }				  from "react";
+import { FaArrowAltCircleRight }  from "react-icons/fa";
+import { Box, Tooltip }      	  from "@chakra-ui/react";
+import { Btn } 					  from "./btn"
+import Txt 						  from "./txt"
 
-function Emperor(props) {
+const fontFamily = "arial,ｍｓ ｐゴシック,ms pgothic,돋움,dotum,helvetica,sans-serif";	
+
+function EmpTxt(props) {
+
+	const emperorType = props.emperorId === 1
+							? "NATION" 
+							: props.emperorId === 2
+								? "CONTINENT" 
+								: "WORLD" 
+
+	const subTitle = props.emperorId === 1
+						?  "PRESIDENTS"
+						: props.emperorId === 2
+							? "STARS"
+							: "ENTREPRENEURS"
+
+	return(
+		<Box padding="50px 0px">
+			<Txt fontFamily={fontFamily} 
+				 fontSize="20px"
+				 opacity="0.8"
+				 text={emperorType}
+			/>
+			<Txt fontFamily={fontFamily} 
+				 fontSize="20px"
+				 opacity="0.8"
+				 text="EMPEROR"
+			/>
+			<Txt fontFamily={fontFamily} 
+				 fontSize="14px"
+				 opacity="0.3"
+				 text={subTitle}
+			/>
+		</Box>
+	);
+}
+
+function Tip(props) {
+	
+	const pixelNumber = props.pixel + " PIXEL"
+
+	const priceInUSDC = props.price + " USDC"
+	
+	return(
+		<Box margin="10px">
+			<Txt text="1 NFT" fontSize="14px" fontFamily={fontFamily} />
+			<Txt text={pixelNumber} fontSize="14px" fontFamily={fontFamily}/>
+			<Txt text="PRICE:" fontSize="10px" fontFamily={fontFamily} />
+			<Txt text={priceInUSDC} fontSize="10px" fontFamily={fontFamily} />
+		</Box>
+	);
+}
+
+function Img(props) {
 
 	const imgId = "img_nft_" + props.emperorId;
 
 	return(
-		<Box bg="black"
-			 w="187px"
-			 borderRadius="20px"
-			 padding="20px 0px"
-			 align="center"
-		>
+		<>
 			<svg preserveAspectRatio="xMidYMid meet" 
 				 data-bbox="34.726 34.726 130.548 130.548" 
 				 viewBox="34.726 34.726 130.548 130.548" 
@@ -37,11 +87,43 @@ function Emperor(props) {
 			        <path fill="#231F20" d="M46.594 153.406v-26.279H34.726v38.147h38.147v-11.868H46.594z" data-color="1"></path>
 			    </g>
 			</svg>
-			<Box padding="25px 0px">
-				<Btn text="MINT" rightIcon={<FaArrowAltCircleRight fill="#FFFFFF" size="30px"/>} />
-			</Box>
-		</Box>
-	)
+		</>
+	);
 }
 
-export default Emperor;
+export default function Emperor(props) {
+	
+	const img = <Img emperorId={props.emperorId} imSrc={props.imSrc} />;
+
+	const alt = <EmpTxt emperorId={props.emperorId} />;
+
+	const [nftImg, setNftImg] = useState(img);
+
+	return(
+		<Tooltip label={<Tip pixel={props.pixel} price={props.price} />} 
+				 width="187px" 
+				 borderRadius="20px" 
+				 bg="black"
+				 closeOnClick={false}
+				 onOpen={() => setNftImg(alt)}
+				 onClose={() => setNftImg(img)}
+		>
+			<Box bg="black"
+				 w="187px"
+				 h="315px"
+				 borderRadius="20px"
+				 padding="20px 0px"
+				 align="center"
+			>
+				<Box h="180px">
+					{nftImg}
+				</Box>
+				<Box padding="25px 30px">
+				<Btn text="MINT" 
+					 rightIcon={<FaArrowAltCircleRight fill="#FFFFFF" size="30px"/>} 
+				/>
+			</Box>
+			</Box>
+		</Tooltip>
+	);
+}

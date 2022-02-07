@@ -1,5 +1,5 @@
-import { Box, Image, Grid, GridItem, Center }   		  from "@chakra-ui/react";
-import Txt     			   		  						  from "./txt";
+import { Box, Image, Grid, GridItem, Center }    from "@chakra-ui/react";
+import Txt     			   		  			     from "./txt";
 
 function Nft(props) {
 
@@ -21,7 +21,7 @@ function Nft(props) {
 	      				  w="100%" 
 	      				  templateRows='repeat(8, 1fr)' 
 	      				  templateColumns='repeat(8, 1fr)' 
-	      				  gap={5}
+	      				  gap={1}
 	      			>
 	      				<GridItem rowSpan={1} colSpan={1} />
 	      				<GridItem rowSpan={1} colSpan={1}>
