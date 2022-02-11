@@ -75,7 +75,7 @@ function Img(props) {
 				 aria-labelledby="svgcid-g1w5e1-y4huld">
 			<defs>
 				<pattern id={imgId} patternUnits="userSpaceOnUse" x="45" y="45" width="135" height="135">
-					<image href={props.imSrc} width="105" height="105"/>
+					<image href={props.imSrc} width="110" height="110"/>
 				</pattern>
 			</defs>
 			<title></title>
@@ -92,8 +92,10 @@ function Img(props) {
 }
 
 export default function Emperor(props) {
+
+	const imgBaseURI = "https://gateway.pinata.cloud/ipfs/QmXg1TxRfyXQVzf2doFkBijnE1c41wjmjtovjccXqb7JMV/";
 	
-	const img = <Img emperorId={props.emperorId} imSrc={props.imSrc} />;
+	const img = <Img emperorId={props.emperorId} imSrc={imgBaseURI + props.emperorId + ".png"} />;
 
 	const alt = <EmpTxt emperorId={props.emperorId} />;
 

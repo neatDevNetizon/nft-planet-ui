@@ -4,10 +4,14 @@ import Txt                              from '../../components/txt';
 import Emperors                         from '../../components/emperors';
 
 export default function Mint(props) {
+
+    const popupHeight = window.innerHeight*0.65;
+    const popupWidth = window.innerWidth*0.5;
+
     return (
       <Box
-        height= {window.innerHeight*0.65}
-        width = {window.innerWidth*0.5}
+        height= {popupHeight}
+        width = {popupWidth}
         border='2px outset white'
         borderRadius='30px'
         borderColor='white'
@@ -15,28 +19,29 @@ export default function Mint(props) {
         fontSize='14px'
         bg='transparent'
       >
-        <Grid h="100%" w="98%" templateRows='repeat(24, 1fr)' gap={1}>
+        <Grid h={popupHeight} w={popupWidth} templateRows='repeat(24, 1fr)' gap={1}>
           <GridItem rowSpan={4}>
             <Center h="100%">
-              <Box width="5%" />
-              <Box width="90%">
+              <Box width="10%" />
+              <Box width="80%">
                 <Txt fontSize="38px"
                      opacity="0.5" 
                      text="CHOOSE YOUR EMPEROR TO MINT"
                 />
               </Box>
-              <Box width="5%" align="right">
+              <Box width="10%" align="right">
                 <IconButton 
                     onClick={props.close} 
                     colorScheme='transparent'        
                     icon={<CgClose color="white" size="50px" />}
+                    margin="0 10px 0 0"
                 />
               </Box>
             </Center>
           </GridItem>
           <GridItem rowSpan={1} align="center" />
           <GridItem rowSpan={19} align="center">
-            <Box width="85%">
+            <Box width={popupWidth*0.85}>
               <Emperors />
             </Box>
           </GridItem>
