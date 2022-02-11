@@ -19,33 +19,39 @@ export default function Mint(props) {
         fontSize='14px'
         bg='transparent'
       >
-        <Grid h={popupHeight} w={popupWidth} templateRows='repeat(24, 1fr)' gap={1}>
-          <GridItem rowSpan={4}>
-            <Center h="100%">
-              <Box width="10%" />
-              <Box width="80%">
-                <Txt fontSize="38px"
-                     opacity="0.5" 
-                     text="CHOOSE YOUR EMPEROR TO MINT"
-                />
+        <Center h={popupHeight} w={popupWidth}>
+          <Grid h={popupHeight} 
+                w={popupWidth*0.98} 
+                templateRows='repeat(24, 1fr)' 
+                gap={1}
+          >
+            <GridItem rowSpan={4}>
+              <Center h="100%">
+                <Box width="10%" />
+                <Box width="80%">
+                  <Txt fontSize="38px"
+                       opacity="0.5" 
+                       text="CHOOSE YOUR EMPEROR TO MINT"
+                  />
+                </Box>
+                <Box width="10%" align="right">
+                  <IconButton 
+                      onClick={props.close} 
+                      colorScheme='transparent'        
+                      icon={<CgClose color="white" size="50px" />}
+                      margin="0 10px 0 0"
+                  />
+                </Box>
+              </Center>
+            </GridItem>
+            <GridItem rowSpan={1} align="center" />
+            <GridItem rowSpan={19} align="center">
+              <Box width={popupWidth*0.85}>
+                <Emperors />
               </Box>
-              <Box width="10%" align="right">
-                <IconButton 
-                    onClick={props.close} 
-                    colorScheme='transparent'        
-                    icon={<CgClose color="white" size="50px" />}
-                    margin="0 10px 0 0"
-                />
-              </Box>
-            </Center>
-          </GridItem>
-          <GridItem rowSpan={1} align="center" />
-          <GridItem rowSpan={19} align="center">
-            <Box width={popupWidth*0.85}>
-              <Emperors />
-            </Box>
-          </GridItem>
-        </Grid>
+            </GridItem>
+          </Grid>
+        </Center>
       </Box>
     );
 }

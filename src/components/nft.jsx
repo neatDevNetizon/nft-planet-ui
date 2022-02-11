@@ -5,6 +5,8 @@ function Nft(props) {
 
 	const imgBaseURI = "https://gateway.pinata.cloud/ipfs/QmXg1TxRfyXQVzf2doFkBijnE1c41wjmjtovjccXqb7JMV/";
 
+	const imSrc = imgBaseURI + props.tokenId + ".png";
+
 	const priceFontFamily = "arial,ｍｓ ｐゴシック,ms pgothic,돋움,dotum,helvetica,sans-serif";
 
 	const price = props.priceInMatic + " MATIC"
@@ -43,7 +45,7 @@ function Nft(props) {
 						<GridItem rowSpan={1} colSpan={1}/>
 		      			<GridItem rowSpan={5} colSpan={8}>
 		      				<Center	h="100%">
-								<Image src={props.imSrc} 
+								<Image src={imSrc} 
 									   width="103px" 
 									   height="103px"
 									   borderRadius="20px"

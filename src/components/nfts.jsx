@@ -1,33 +1,166 @@
-import { Grid, GridItem }   from '@chakra-ui/react'
+import { Grid, GridItem, Box }   from '@chakra-ui/react'
 import Nft                  from './nft' 
 
 function Nfts() {
 
   return (
-    <>
+    <div h="300px" w="100%" overflow="hidden">
+    <div overflowY="scroll" paddingRight="20px">
       <Grid h="100%"
             w="100%" 
             templateColumns='repeat(7, 1fr)' 
             gap={4}
       >
         <GridItem colSpan={1} >
-            <Nft imSrc="images/nfts/1.webp" priceInMatic="156,45" nftId="1" />
+            <Nft tokenId={1} priceInMatic="156,45" nftId="1" />
         </GridItem>
         <GridItem colSpan={1} >
-            <Nft imSrc="images/nfts/2.webp" priceInMatic="6,87" nftId="2" />
+            <Nft tokenId={2} priceInMatic="6,87" nftId="2" />
         </GridItem>       
         <GridItem colSpan={1} >
-            <Nft imSrc="images/nfts/3.webp" priceInMatic="134,47" nftId="3" />
+            <Nft tokenId={3} priceInMatic="134,47" nftId="3" />
         </GridItem>
         <GridItem colSpan={1} >
-            <Nft imSrc="images/nfts/4.webp" priceInMatic="45" nftId="4" />
+            <Nft tokenId={4} priceInMatic="45" nftId="4" />
         </GridItem>
-        <GridItem colSpan={1} bg="" />
-        <GridItem colSpan={1} bg="" />
-        <GridItem colSpan={1} bg="" />
+        <GridItem colSpan={1} >
+            <Nft tokenId={1} priceInMatic="156,45" nftId="1" />
+        </GridItem>
+        <GridItem colSpan={1} >
+            <Nft tokenId={2} priceInMatic="6,87" nftId="2" />
+        </GridItem>       
+        <GridItem colSpan={1} >
+            <Nft tokenId={3} priceInMatic="134,47" nftId="3" />
+        </GridItem>
+        <GridItem colSpan={1} >
+            <Nft tokenId={4} priceInMatic="45" nftId="4" />
+        </GridItem>
+        <GridItem colSpan={1} >
+            <Nft tokenId={1} priceInMatic="156,45" nftId="1" />
+        </GridItem>
+        <GridItem colSpan={1} >
+            <Nft tokenId={2} priceInMatic="6,87" nftId="2" />
+        </GridItem>       
+        <GridItem colSpan={1} >
+            <Nft tokenId={3} priceInMatic="134,47" nftId="3" />
+        </GridItem>
+        <GridItem colSpan={1} >
+            <Nft tokenId={4} priceInMatic="45" nftId="4" />
+        </GridItem>
+        <GridItem colSpan={1} >
+            <Nft tokenId={1} priceInMatic="156,45" nftId="1" />
+        </GridItem>
+        <GridItem colSpan={1} >
+            <Nft tokenId={2} priceInMatic="6,87" nftId="2" />
+        </GridItem>       
+
+
       </Grid>
-    </>
+    </div>
+    </div>
   )
 }
 
 export default Nfts;
+
+// import { IconButton, Box, Center } from '@chakra-ui/react'
+// import React from 'react';
+// import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+// import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
+
+// function Emperors(props) {
+
+//   const tokenIds = !props.tokenIds
+//                       ? [1,2,3,4,5,6,7,8,9]
+//                       : props.tokenIds;
+//   const items = getItems(tokenIds);
+//   const [selected, setSelected] = React.useState([]);
+
+//   const isItemSelected = (id) => !!selected.find((el) => el === id);
+
+//   const handleClick =
+//     (id) =>
+//     ({ getItemById, scrollToItem }) => {
+//       const itemSelected = isItemSelected(id);
+
+//       setSelected((currentSelected) =>
+//         itemSelected
+//           ? currentSelected.filter((el) => el !== id)
+//           : currentSelected.concat(id)
+//       );
+//     };
+
+//   return (
+//     <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+//       {items.map(({ id }) => (
+//         <Card
+//           itemId={id} // NOTE: itemId is required for track items
+//           tokenId={tokenIds[id]}
+//           title={id}
+//           key={id}
+//           onClick={handleClick(id)}
+//           selected={isItemSelected(id)}
+//         />
+//       ))}
+//     </ScrollMenu>
+//   );
+// }
+
+// const getItems = (tokenIds) =>
+//   Array(tokenIds.length)
+//     .fill(0)
+//     .map((_, ind) => ({ id: `${ind}` }));
+
+// function LeftArrow() {
+//   const { isFirstItemVisible, scrollPrev } = React.useContext(VisibilityContext);
+
+//   return (
+//     <Center h="100%">
+//       <IconButton 
+//         onClick={() => scrollPrev()} 
+//         colorScheme='transparent'
+//         disabled={isFirstItemVisible}        
+//         icon={<AiOutlineDoubleLeft color="white" size="50px" />}
+//       />
+//     </Center>
+//   );
+// }
+
+// function RightArrow() {
+//   const { isLastItemVisible, scrollNext } = React.useContext(VisibilityContext);
+
+//   return (
+//     <IconButton 
+//       onClick={() => scrollNext()} 
+//       colorScheme='transparent'
+//       disabled={isLastItemVisible}        
+//       icon={<AiOutlineDoubleRight color="white" size="50px" />}
+//     />
+//   );
+// }
+
+// function Card({ onClick, selected, title, itemId, tokenId }) {
+//   const visibility = React.useContext(VisibilityContext);
+
+//   return (
+//     <Box
+//       onClick={() => onClick(visibility)}
+//       w='240px'
+//       tabIndex={0}
+//       align="center"
+//     >
+//       <Box>
+//         <Box>
+//           <Emperor pixel="20" price="0.99" emperorId={tokenId} />
+//         </Box>
+//       </Box>
+//       <Box
+//         style={{
+//           height: '110px',
+//         }}
+//       />
+//     </Box>
+//   );
+// }
+
+// export default Emperors;
