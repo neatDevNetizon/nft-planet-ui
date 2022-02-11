@@ -3,6 +3,8 @@ import Txt     			   		  			     from "./txt";
 
 function Nft(props) {
 
+	const imgBaseURI = "https://gateway.pinata.cloud/ipfs/QmXg1TxRfyXQVzf2doFkBijnE1c41wjmjtovjccXqb7JMV/";
+
 	const priceFontFamily = "arial,ｍｓ ｐゴシック,ms pgothic,돋움,dotum,helvetica,sans-serif";
 
 	const price = props.priceInMatic + " MATIC"

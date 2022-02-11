@@ -8,15 +8,15 @@ const fontFamily = "arial,ｍｓ ｐゴシック,ms pgothic,돋움,dotum,helveti
 
 function EmpTxt(props) {
 
-	const emperorType = props.emperorId === 1
+	const emperorType = props.emperorTier === 1
 							? "NATION" 
-							: props.emperorId === 2
+							: props.emperorTier === 2
 								? "CONTINENT" 
 								: "WORLD" 
 
-	const subTitle = props.emperorId === 1
+	const subTitle = props.emperorTier === 1
 						?  "PRESIDENTS"
-						: props.emperorId === 2
+						: props.emperorTier === 2
 							? "STARS"
 							: "ENTREPRENEURS"
 
@@ -59,7 +59,7 @@ function Tip(props) {
 
 function Img(props) {
 
-	const imgId = "img_nft_" + props.emperorId;
+	const imgId = "img_nft_" + props.emperorTier;
 
 	return(
 		<>
@@ -93,11 +93,9 @@ function Img(props) {
 
 export default function Emperor(props) {
 
-	const imgBaseURI = "https://gateway.pinata.cloud/ipfs/QmXg1TxRfyXQVzf2doFkBijnE1c41wjmjtovjccXqb7JMV/";
-	
-	const img = <Img emperorId={props.emperorId} imSrc={imgBaseURI + props.emperorId + ".png"} />;
+	const img = <Img emperorTier={props.emperorTier} imSrc={props.imSrc} />;
 
-	const alt = <EmpTxt emperorId={props.emperorId} />;
+	const alt = <EmpTxt emperorTier={props.emperorTier} />;
 
 	const [nftImg, setNftImg] = useState(img);
 
