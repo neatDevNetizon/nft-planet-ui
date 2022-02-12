@@ -40,15 +40,18 @@ export default function Collection(props) {
                     onClick={props.close} 
                     colorScheme='transparent'        
                     icon={<CgClose color="white" size="50px" />}
+                    margin="0 10px 0 0"
                 />
               </Box>
             </Center>
           </GridItem>
-          <GridItem rowSpan={1} />
-          <GridItem rowSpan={19}>
-            <Box width="100%" height="80%">
+
+          <GridItem rowSpan={20}>
+          <Center height="100%">
+            <Box w={popupWidth*0.95} height="90%">
               <Nfts />
             </Box>
+          </Center>
           </GridItem>
         </Grid>
       </Center>

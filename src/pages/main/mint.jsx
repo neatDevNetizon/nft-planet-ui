@@ -28,7 +28,7 @@ export default function Mint(props) {
             <GridItem rowSpan={4}>
               <Center h="100%">
                 <Box width="10%" />
-                <Box width="80%">
+                <Box width="90%">
                   <Txt fontSize="38px"
                        opacity="0.5" 
                        text="CHOOSE YOUR EMPEROR TO MINT"

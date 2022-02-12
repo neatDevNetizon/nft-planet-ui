@@ -1,63 +1,46 @@
-import { Grid, GridItem, Box }   from '@chakra-ui/react'
+import { Box, Wrap, WrapItem }   from '@chakra-ui/react'
 import Nft                  from './nft' 
 
 function Nfts() {
 
   return (
-    <div h="300px" w="100%" overflow="hidden">
-    <div overflowY="scroll" paddingRight="20px">
-      <Grid h="100%"
-            w="100%" 
-            templateColumns='repeat(7, 1fr)' 
-            gap={4}
-      >
-        <GridItem colSpan={1} >
-            <Nft tokenId={1} priceInMatic="156,45" nftId="1" />
-        </GridItem>
-        <GridItem colSpan={1} >
-            <Nft tokenId={2} priceInMatic="6,87" nftId="2" />
-        </GridItem>       
-        <GridItem colSpan={1} >
-            <Nft tokenId={3} priceInMatic="134,47" nftId="3" />
-        </GridItem>
-        <GridItem colSpan={1} >
-            <Nft tokenId={4} priceInMatic="45" nftId="4" />
-        </GridItem>
-        <GridItem colSpan={1} >
-            <Nft tokenId={1} priceInMatic="156,45" nftId="1" />
-        </GridItem>
-        <GridItem colSpan={1} >
-            <Nft tokenId={2} priceInMatic="6,87" nftId="2" />
-        </GridItem>       
-        <GridItem colSpan={1} >
-            <Nft tokenId={3} priceInMatic="134,47" nftId="3" />
-        </GridItem>
-        <GridItem colSpan={1} >
-            <Nft tokenId={4} priceInMatic="45" nftId="4" />
-        </GridItem>
-        <GridItem colSpan={1} >
-            <Nft tokenId={1} priceInMatic="156,45" nftId="1" />
-        </GridItem>
-        <GridItem colSpan={1} >
-            <Nft tokenId={2} priceInMatic="6,87" nftId="2" />
-        </GridItem>       
-        <GridItem colSpan={1} >
-            <Nft tokenId={3} priceInMatic="134,47" nftId="3" />
-        </GridItem>
-        <GridItem colSpan={1} >
-            <Nft tokenId={4} priceInMatic="45" nftId="4" />
-        </GridItem>
-        <GridItem colSpan={1} >
-            <Nft tokenId={1} priceInMatic="156,45" nftId="1" />
-        </GridItem>
-        <GridItem colSpan={1} >
-            <Nft tokenId={2} priceInMatic="6,87" nftId="2" />
-        </GridItem>       
+    <Box h="100%" w="100%" overflowY="hidden" overflowX="hidden">
+    <Box h="100%" w="105%" overflowY="scroll" overflowX="hidden">
+        <Wrap spacing='20px'>
+            <Nft tokenId={1} priceInMatic="156,45" nftId="1"/>
 
+            <Nft tokenId={2} priceInMatic="6,87" nftId="2" />
 
-      </Grid>
-    </div>
-    </div>
+            <Nft tokenId={3} priceInMatic="134,47" nftId="3" />
+
+            <Nft tokenId={4} priceInMatic="45" nftId="4" />
+
+            <Nft tokenId={5} priceInMatic="156,45" nftId="1" />
+
+            <Nft tokenId={6} priceInMatic="6,87" nftId="2" />
+
+            <Nft tokenId={7} priceInMatic="134,47" nftId="3" />
+
+            <Nft tokenId={8} priceInMatic="45" nftId="4" />
+
+            <Nft tokenId={9} priceInMatic="156,45" nftId="1" />
+
+            <Nft tokenId={10} priceInMatic="6,87" nftId="2" />
+
+            <Nft tokenId={11} priceInMatic="134,47" nftId="3" />
+
+            <Nft tokenId={12} priceInMatic="45" nftId="4" />
+
+            <Nft tokenId={13} priceInMatic="156,45" nftId="1" />
+
+            <Nft tokenId={14} priceInMatic="6,87" nftId="2" />
+
+            <Nft tokenId={15} priceInMatic="134,47" nftId="3" />
+
+            <Nft tokenId={16} priceInMatic="45" nftId="4" />
+        </Wrap>
+    </Box>
+    </Box>
   )
 }
 
