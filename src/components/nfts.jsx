@@ -7,37 +7,54 @@ function Nfts() {
     <Box h="100%" w="100%" overflowY="hidden" overflowX="hidden">
     <Box h="100%" w="105%" overflowY="scroll" overflowX="hidden">
         <Wrap spacing='20px'>
-            <Nft tokenId={1} priceInMatic="156,45" nftId="1"/>
-
-            <Nft tokenId={2} priceInMatic="6,87" nftId="2" />
-
-            <Nft tokenId={3} priceInMatic="134,47" nftId="3" />
-
-            <Nft tokenId={4} priceInMatic="45" nftId="4" />
-
-            <Nft tokenId={5} priceInMatic="156,45" nftId="1" />
-
-            <Nft tokenId={6} priceInMatic="6,87" nftId="2" />
-
-            <Nft tokenId={7} priceInMatic="134,47" nftId="3" />
-
-            <Nft tokenId={8} priceInMatic="45" nftId="4" />
-
-            <Nft tokenId={9} priceInMatic="156,45" nftId="1" />
-
-            <Nft tokenId={10} priceInMatic="6,87" nftId="2" />
-
-            <Nft tokenId={11} priceInMatic="134,47" nftId="3" />
-
-            <Nft tokenId={12} priceInMatic="45" nftId="4" />
-
-            <Nft tokenId={13} priceInMatic="156,45" nftId="1" />
-
-            <Nft tokenId={14} priceInMatic="6,87" nftId="2" />
-
-            <Nft tokenId={15} priceInMatic="134,47" nftId="3" />
-
-            <Nft tokenId={16} priceInMatic="45" nftId="4" />
+            <WrapItem>
+                <Nft tokenId={1} priceInMatic="156,45" nftId="1"/>
+            </WrapItem>
+            <WrapItem>
+                <Nft tokenId={2} priceInMatic="6,87" nftId="2" />
+            </WrapItem>
+            <WrapItem>
+                <Nft tokenId={3} priceInMatic="134,47" nftId="3" />
+            </WrapItem>
+            <WrapItem>
+                <Nft tokenId={4} priceInMatic="45" nftId="4" />
+            </WrapItem>
+            <WrapItem>
+                <Nft tokenId={5} priceInMatic="156,45" nftId="1" />
+            </WrapItem>
+            <WrapItem>
+                <Nft tokenId={6} priceInMatic="6,87" nftId="2" />
+            </WrapItem>
+            <WrapItem>
+                <Nft tokenId={7} priceInMatic="134,47" nftId="3" />
+            </WrapItem>
+            <WrapItem>
+                <Nft tokenId={8} priceInMatic="45" nftId="4" />
+            </WrapItem>
+            <WrapItem>
+                <Nft tokenId={9} priceInMatic="156,45" nftId="1" />
+            </WrapItem>
+            <WrapItem>
+                <Nft tokenId={10} priceInMatic="6,87" nftId="2" />
+            </WrapItem>
+            <WrapItem>
+                <Nft tokenId={11} priceInMatic="134,47" nftId="3" />
+            </WrapItem>
+            <WrapItem>
+                <Nft tokenId={12} priceInMatic="45" nftId="4" />
+            </WrapItem>
+            <WrapItem>
+                <Nft tokenId={13} priceInMatic="156,45" nftId="1" />
+            </WrapItem>
+            <WrapItem>
+                <Nft tokenId={14} priceInMatic="6,87" nftId="2" />
+            </WrapItem>
+            <WrapItem>
+                <Nft tokenId={15} priceInMatic="134,47" nftId="3" />
+            </WrapItem>
+            <WrapItem>
+                <Nft tokenId={16} priceInMatic="45" nftId="4" />
+            </WrapItem>
         </Wrap>
     </Box>
     </Box>
