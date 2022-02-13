@@ -1,7 +1,21 @@
-import { Box }        from "@chakra-ui/react";
-import { Outlet }     from "react-router-dom";
+import React                    from "react";
+import { Box }                  from "@chakra-ui/react";
+import { Outlet }               from "react-router-dom";
+import { LoadWeb3 }             from "../utils/loadContract";
 
 function Layout() {
+
+  const [contract, setContract] = React.useState();
+  React.useEffect(() => {
+    (async() => {
+      let _contract;
+      _contract = await LoadWeb3();
+      setContract(_contract)
+    })();
+  }, []);
+
+  console.log(contract);
+
   return (
     <Box
       bgImage="url('/images/background.png')"
