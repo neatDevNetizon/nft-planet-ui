@@ -1,8 +1,8 @@
 import Web3 from "web3";
 import contract from "../contracts/artifacts/Emp.json";
-const address = "0xe5989284f5Ca47EDDCb87F2e316b3a8f041901C9";
 
-// let web3 = new Web3(Web3.givenProvider);
+const address = process.env.EMP_CONTRACT_ADDRESS;
+console.log(address);
 
 const contractABI = () => {
   const abi = contract.abi;
@@ -32,3 +32,9 @@ export const LoadWeb3 = async () => {
   window.contract = await loadContract();
   return window.contract;
 };
+
+export async function symbol() {
+    const contract = await LoadWeb3();
+    const symbol = await contract.methods.symbol().call();
+    return symbol;
+}
