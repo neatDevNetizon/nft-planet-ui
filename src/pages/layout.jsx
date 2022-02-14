@@ -1,7 +1,7 @@
 import { Box }                  from "@chakra-ui/react";
 import { Outlet }               from "react-router-dom";
 
-function Layout() {
+function Layout() {  
 
   return (
     <Box
@@ -11,7 +11,6 @@ function Layout() {
       bgSize="100% 100%"
       bgAttachment="fixed"
       minHeight="100%"
-      // height="100vh"
     >
       <Outlet />
     </Box>

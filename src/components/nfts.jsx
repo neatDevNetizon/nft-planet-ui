@@ -10,15 +10,14 @@ function Nfts(props) {
   
   const tokenIds = props.nftIds;
   const items = getItems(tokenIds);
-  console.log(items);
 
   return (
     <Box h="100%" w="100%" overflowY="hidden" overflowX="hidden">
         <Box h="100%" w="105%" overflowY="scroll" overflowX="hidden">
             <Wrap spacing='20px'>
                 {items.map(({ id }) => (
-                    <WrapItem>
-                        <Nft key={id} tokenId={Number(tokenIds[id])} priceInMatic="156,45"/>
+                    <WrapItem key={id}>
+                        <Nft tokenId={Number(tokenIds[id])} priceInMatic="156,45"/>
                     </WrapItem>
                 ))}
             </Wrap>

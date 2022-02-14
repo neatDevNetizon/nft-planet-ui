@@ -1,5 +1,5 @@
-import { Box, Image, Grid, GridItem, Center }    from "@chakra-ui/react";
-import Txt     			   		  			     from "./txt";
+import { Box, Image, Grid, GridItem, Center, Link }    from "@chakra-ui/react";
+import Txt     			   		  			           from "./txt";
 
 function Nft(props) {
 
@@ -60,11 +60,13 @@ function Nft(props) {
 						</GridItem>
 						<GridItem rowSpan={1} colSpan={2}>
 							<Center	h="100%">
-								<Txt fontFamily={priceFontFamily}
-									 fontSize="14px"
-									 text="SELL"
-									 align="left"
-								/>
+								<Link href={ "https://testnets.opensea.io/assets/" + process.env.REACT_APP_EMP_CONTRACT_ADDRESS + "/" + props.tokenId }>
+									<Txt fontFamily={priceFontFamily}
+										fontSize="14px"
+									 	text="SELL"
+									 	align="left"
+									/>
+								</Link>
 							</Center>
 						</GridItem>
 	      			</Grid>
