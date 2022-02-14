@@ -60,7 +60,7 @@ function Nft(props) {
 						</GridItem>
 						<GridItem rowSpan={1} colSpan={2}>
 							<Center	h="100%">
-								<Link href={ "https://testnets.opensea.io/assets/" + process.env.REACT_APP_EMP_CONTRACT_ADDRESS + "/" + props.tokenId }>
+								<Link href={ "https://testnets.opensea.io/assets/" + process.env.REACT_APP_EMP_CONTRACT_ADDRESS + "/" + props.tokenId } isExternal>
 									<Txt fontFamily={priceFontFamily}
 										fontSize="14px"
 									 	text="SELL"
