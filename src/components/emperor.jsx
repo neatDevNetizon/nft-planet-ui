@@ -1,6 +1,7 @@
 import { useState }				  from "react";
 import { FaArrowAltCircleRight }  from "react-icons/fa";
 import { Box, Tooltip }      	  from "@chakra-ui/react";
+import { Link }                   from "react-router-dom";
 import { Btn } 					  from "./btn"
 import Txt 						  from "./txt"
 import { Mint }                   from "../utils/useContract";
@@ -97,7 +98,8 @@ function mint(tier) {
 }
 
 function toMain() {
-	window.location.href='/main';
+	// window.location.href='/main';
+
 }
 
 export default function Emperor(props) {
@@ -128,11 +130,16 @@ export default function Emperor(props) {
 					{nftImg}
 				</Box>
 				<Box padding="25px 30px">
-				<Btn 
-					text="MINT" 
-					rightIcon={<FaArrowAltCircleRight fill="#FFFFFF" size="30px"/>}
-					onClick={() => props.isMint ? mint(props.emperorTier) : toMain()}
-				/>
+				{props.isMint
+					? <Btn 
+						text="MINT" 
+						rightIcon={<FaArrowAltCircleRight fill="#FFFFFF" size="30px" />}
+						onClick={() => mint(props.emperorTier)}
+					  />
+					: <Link to="/main" style={{ textDecoration: 'none' }}>
+						<Btn text="MINT" rightIcon={<FaArrowAltCircleRight fill="#FFFFFF" size="30px" />} />
+					  </Link>
+				}
 			</Box>
 			</Box>
 		</Tooltip>
