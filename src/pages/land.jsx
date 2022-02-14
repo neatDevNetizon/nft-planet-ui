@@ -1,12 +1,17 @@
-import { Image, Grid, GridItem, Center, Box, Link as ChakraLink } from "@chakra-ui/react";
-import { Link }                                                   from "react-router-dom";
-import { BsShare }                                                from "react-icons/bs";
-import { IoDocumentOutline }                                      from "react-icons/io5";
-import { FiThumbsUp }                                             from "react-icons/fi";
-import { FaArrowAltCircleDown }                                   from "react-icons/fa";
-import Emperors                                                   from "../components/emperors";
-import { Btn }                                                    from "../components/btn";
-import Txt                                                        from "../components/txt";
+import { Image, 
+         Grid, 
+         GridItem, 
+         Center, 
+         Box, 
+         Link as ChakraLink }         from "@chakra-ui/react";
+import { Link }                       from "react-router-dom";
+import { BsShare }                    from "react-icons/bs";
+import { IoDocumentOutline }          from "react-icons/io5";
+import { FiThumbsUp }                 from "react-icons/fi";
+import { FaArrowAltCircleDown }       from "react-icons/fa";
+import Emperors                       from "../components/emperors";
+import { Btn }                        from "../components/btn";
+import Txt                            from "../components/txt";
 import { landLogoHeight, 
          landBtnHeight, 
          btnBorderRadius, 
@@ -18,7 +23,7 @@ import { landLogoHeight,
          descriptionTextSize,
          linkIconHeight,
          btnHeight,
-         btnIconSize } from "../components/componentSize";
+         btnIconSize }                from "../components/componentSize";
  
 function Land() {
 
@@ -26,11 +31,19 @@ function Land() {
 
   return (
     <>
-      <Grid h={window.innerHeight*3} templateRows='repeat(72, 1fr)' gap={1}>
+      <Grid 
+        h={window.innerHeight*3} 
+        templateRows='repeat(72, 1fr)' 
+        gap={1}
+      >
         <GridItem rowSpan={4} />
         <GridItem rowSpan={9}>
           <Center h="100%">
-            <Image src="./images/Bild5.webp" alt='logo' h={landLogoHeight}/>
+            <Image 
+              src="./images/Bild5.webp" 
+              alt='logo' 
+              h={landLogoHeight}
+            />
           </Center>
         </GridItem>
         <GridItem rowSpan={1} />
@@ -59,8 +72,19 @@ function Land() {
             height="100%"
             width="100%"
           />
-          <Box position='relative' top='-100%' height="100%" align="center">
-            <Grid h="100%" w="100%" templateColumns='repeat(7, 1fr)' templateRows='repeat(7, 1fr)' gap={1}>
+          <Box 
+            position='relative' 
+            top='-100%' 
+            height="100%" 
+            align="center"
+          >
+            <Grid 
+              h="100%" 
+              w="100%" 
+              templateColumns='repeat(7, 1fr)' 
+              templateRows='repeat(7, 1fr)' 
+              gap={1}
+            >
               <GridItem colSpan={7} rowSpan={2}>
                 <Center h="100%">
                   <Txt  
@@ -87,10 +111,20 @@ function Land() {
         <GridItem rowSpan={1} />
         <GridItem rowSpan={1}>
           <Center h="100%">
-            <Grid w={window.innerWidth} h="100%" templateColumns='repeat(7, 1fr)' gap={1}>
+            <Grid 
+              w={window.innerWidth} 
+              h="100%" 
+              templateColumns='repeat(7, 1fr)' 
+              gap={1}
+            >
               <GridItem colSpan={2} />
               <GridItem colSpan={1}>
-                <Txt fontSize={landSubTitleSize} text="PHASE 1" isUnderline="true" opacity="0.3"/>
+                <Txt 
+                  fontSize={landSubTitleSize} 
+                  text="PHASE 1" 
+                  isUnderline="true" 
+                  opacity="0.3"
+                />
               </GridItem>
               <GridItem colSpan={2}>
                 <Center h="100%">
@@ -111,10 +145,19 @@ function Land() {
         <GridItem rowSpan={2} />
         <GridItem rowSpan={1}>
           <Center h="100%">
-            <Grid w={window.innerWidth} h="100%" templateColumns='repeat(7, 1fr)' gap={1}>
+            <Grid 
+              w={window.innerWidth} 
+              h="100%" 
+              templateColumns='repeat(7, 1fr)' 
+              gap={1}
+            >
               <GridItem colSpan={2} />
               <GridItem colSpan={1}>
-                <Txt fontSize={landSubTitleSize} text="PHASE 2" opacity="0.3" />
+                <Txt 
+                  fontSize={landSubTitleSize} 
+                  text="PHASE 2" 
+                  opacity="0.3"
+                />
               </GridItem>
               <GridItem colSpan={2}>
                 <Center h="100%">
@@ -135,10 +178,19 @@ function Land() {
         <GridItem rowSpan={2} />
         <GridItem rowSpan={1}>
           <Center h="100%">
-            <Grid w={window.innerWidth} h="100%" templateColumns='repeat(7, 1fr)' gap={1}>
+            <Grid 
+              w={window.innerWidth} 
+              h="100%" 
+              templateColumns='repeat(7, 1fr)' 
+              gap={1}
+            >
               <GridItem colSpan={2} />
               <GridItem colSpan={1}>
-                <Txt fontSize={landSubTitleSize} text="PHASE 3" opacity="0.3" />
+                <Txt 
+                  fontSize={landSubTitleSize} 
+                  text="PHASE 3" 
+                  opacity="0.3" 
+                />
               </GridItem>
               <GridItem colSpan={2}>
                 <Center h="100%">
@@ -159,7 +211,12 @@ function Land() {
         <GridItem rowSpan={3} />
         <GridItem rowSpan={5}>
           <Center h="100%">
-            <Grid w={window.innerWidth} h="100%" templateColumns='repeat(10, 1fr)' gap={35}>
+            <Grid 
+              w={window.innerWidth} 
+              h="100%" 
+              templateColumns='repeat(10, 1fr)' 
+              gap={35}
+            >
               <GridItem colSpan={2} />
               <GridItem colSpan={2}>
                   <BsShare color="white" size={descriptionIconSize} />
@@ -190,20 +247,36 @@ function Land() {
         <GridItem rowSpan={3}>
           <Center h="100%">
             <ChakraLink href="https://discord.com/">
-              <Image src="./images/discord.webp" margin="10px" h={linkIconHeight} />
+              <Image 
+                src="./images/discord.webp" 
+                margin="10px" 
+                h={linkIconHeight} 
+              />
             </ChakraLink>
             <ChakraLink href="https://twitter.com/">
-              <Image src="./images/twitter.webp" margin="10px" h={linkIconHeight} />
+              <Image 
+                src="./images/twitter.webp" 
+                margin="10px" 
+                h={linkIconHeight} 
+              />
             </ChakraLink>
             <ChakraLink href="https://telegram.org/">
-              <Image src="./images/telegram.webp" margin="10px" h={linkIconHeight} />
+              <Image 
+                src="./images/telegram.webp" 
+                margin="10px" 
+                h={linkIconHeight} 
+              />
             </ChakraLink>
           </Center>
         </GridItem>
         <GridItem rowSpan={1} />
       </Grid>
 
-      <Box position='fixed' top='30px' right='30px'>
+      <Box 
+        position='fixed' 
+        top='30px' 
+        right='30px'
+      >
           <Link to="/main" style={{ textDecoration: 'none' }}>
             <Btn 
               text=" GO TO APP " 

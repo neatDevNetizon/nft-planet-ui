@@ -1,4 +1,3 @@
-
 const windowWidth0  = 1745;
 const windowHeight0 =  881;
 

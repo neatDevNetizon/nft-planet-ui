@@ -1,7 +1,9 @@
-import { BrowserRouter, Routes, Route }               from "react-router-dom";
-import Layout                                         from "./pages/layout";
-import Land                                           from "./pages/land"
-import Main                                           from "./pages/main"
+import { BrowserRouter, 
+         Routes, 
+         Route }               from "react-router-dom";
+import Layout                  from "./pages/layout";
+import Land                    from "./pages/land"
+import Main                    from "./pages/main"
 
 export default function App() {
   return (

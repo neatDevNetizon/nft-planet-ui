@@ -1,15 +1,21 @@
-import { Box, Image, Grid, GridItem, Center, Link }    from "@chakra-ui/react";
-import Txt     			   		  			           from "./txt";
+import { Box, 
+		 Image, 
+		 Grid, 
+		 GridItem, 
+		 Center, 
+		 Link,
+		 HStack }    		from "@chakra-ui/react";
+import Txt     			   	from "./txt";
 import { nftBoxHeight,
 		 nftBoxWidth,
 		 nftImgSize,
 		 nftTxtSize,
 		 borderRadius,
-		 btnIconSize } 								   from "./componentSize";
+		 btnIconSize } 		from "./componentSize";
 
 function Nft(props) {
 
-	const imgBaseURI = "https://gateway.pinata.cloud/ipfs/QmXg1TxRfyXQVzf2doFkBijnE1c41wjmjtovjccXqb7JMV/";
+	const imgBaseURI = process.env.REACT_APP_IPFS_BASE_URL;
 
 	const imSrc = imgBaseURI + props.tokenId + ".png";
 
@@ -40,14 +46,16 @@ function Nft(props) {
 						</GridItem>
 						<GridItem rowSpan={1} colSpan={8}>
 							<Center h="150%">
-		      					<Image src="images/icons/Logomark-Blue.webp" h={btnIconSize}/>
-		      					<Link href={ "https://testnets.opensea.io/assets/" + process.env.REACT_APP_EMP_CONTRACT_ADDRESS + "/" + props.tokenId } isExternal>
+								<Link href={ process.env.REACT_APP_OPENSEA_BASE_URL + process.env.REACT_APP_EMP_CONTRACT_ADDRESS + "/" + props.tokenId } isExternal>
+		      						<HStack spacing='5px'>
+		      						<Image src="images/icons/Logomark-Blue.webp" h={btnIconSize}/>
 		      						<Txt fontFamily={priceFontFamily}
 										fontSize={nftTxtSize}
 									 	text="SELL"
 									 	align="left"
 									 	margin="0px 5px"
 									/>
+									</HStack>
 								</Link>								
 		      				</Center>
 						</GridItem>

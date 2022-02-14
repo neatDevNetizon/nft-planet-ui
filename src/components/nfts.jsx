@@ -1,4 +1,6 @@
-import { Box, Wrap, WrapItem }   from '@chakra-ui/react'
+import { Box, 
+         Wrap, 
+         WrapItem }         from '@chakra-ui/react'
 import Nft                  from './nft' 
 
 const getItems = (tokenIds) =>

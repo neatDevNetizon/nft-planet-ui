@@ -22,6 +22,7 @@ import { emperorMainTxtPadding,
 		 btnHeight,
 		 btnBorderRadius,
 		 btnIconPadding } 		  from "./componentSize";
+console.log(emperorWidth)
 
 const fontFamily = "arial,ｍｓ ｐゴシック,ms pgothic,돋움,dotum,helvetica,sans-serif";	
 
@@ -172,7 +173,7 @@ export default function Emperor(props) {
 
 	return(
 		<Tooltip label={<Tip pixel={props.pixel} price={props.price} />} 
-				 w={emperorWidth}
+				 width={emperorWidth}
 				 borderRadius={emperorBorderRadius}
 				 bg="black"
 				 closeOnClick={false}

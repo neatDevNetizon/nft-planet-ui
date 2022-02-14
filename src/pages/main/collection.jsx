@@ -1,15 +1,19 @@
-import React                            from 'react';
-import { Grid, GridItem, Center, Box, IconButton }  from '@chakra-ui/react';
-import { CgClose }                      from "react-icons/cg";
-import Nfts                             from '../../components/nfts';
-import Txt                              from '../../components/txt';
-import { WalletOfOwner }                from '../../utils/useContract';
+import React                  from 'react';
+import { Grid, 
+         GridItem, 
+         Center, 
+         Box, 
+         IconButton }         from '@chakra-ui/react';
+import { CgClose }            from "react-icons/cg";
+import Nfts                   from '../../components/nfts';
+import Txt                    from '../../components/txt';
+import { WalletOfOwner }      from '../../utils/useContract';
 import { mainTitleSize,
-         closeIconSize } from "../../components/componentSize";
+         closeIconSize }      from "../../components/componentSize";
 
 export default function Collection(props) {
   
-  const popupHeight = window.innerHeight*0.7;
+  const popupHeight = window.innerHeight*0.65;
 
   const popupWidth = window.innerWidth*0.9;
 

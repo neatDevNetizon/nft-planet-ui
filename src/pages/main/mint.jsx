@@ -1,9 +1,12 @@
-import { Grid, GridItem, Center, Box, IconButton }  from '@chakra-ui/react';
-import { CgClose }                      from "react-icons/cg";
-import Txt                              from '../../components/txt';
-import Emperors                         from '../../components/emperors';
-import { mainTitleSize,
-         closeIconSize } from "../../components/componentSize";
+import { Grid, 
+         GridItem, 
+         Center, 
+         Box, 
+         IconButton }                     from '@chakra-ui/react';
+import { CgClose }                        from "react-icons/cg";
+import Txt                                from '../../components/txt';
+import Emperors                           from '../../components/emperors';
+import { mainTitleSize, closeIconSize }   from "../../components/componentSize";
 
 export default function Mint(props) {
 
@@ -29,7 +32,7 @@ export default function Mint(props) {
             <GridItem rowSpan={4}>
               <Center h="100%">
                 <Box width="10%" />
-                <Box width="90%">
+                <Box width="80%">
                   <Txt fontSize={mainTitleSize}
                        opacity="0.5" 
                        text="CHOOSE YOUR EMPEROR TO MINT"
