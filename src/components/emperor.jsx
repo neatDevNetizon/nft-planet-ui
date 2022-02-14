@@ -3,6 +3,7 @@ import { FaArrowAltCircleRight }  from "react-icons/fa";
 import { Box, Tooltip }      	  from "@chakra-ui/react";
 import { Btn } 					  from "./btn"
 import Txt 						  from "./txt"
+import { Mint }                   from "../utils/useContract";
 
 const fontFamily = "arial,ｍｓ ｐゴシック,ms pgothic,돋움,dotum,helvetica,sans-serif";	
 
@@ -91,6 +92,14 @@ function Img(props) {
 	);
 }
 
+function mint(tier) {
+	(async() => { await Mint(Number(tier)) })();
+}
+
+function toMain() {
+	window.location.href='/main';
+}
+
 export default function Emperor(props) {
 
 	const img = <Img emperorTier={props.emperorTier} imSrc={props.imSrc} />;
@@ -119,8 +128,10 @@ export default function Emperor(props) {
 					{nftImg}
 				</Box>
 				<Box padding="25px 30px">
-				<Btn text="MINT" 
-					 rightIcon={<FaArrowAltCircleRight fill="#FFFFFF" size="30px"/>} 
+				<Btn 
+					text="MINT" 
+					rightIcon={<FaArrowAltCircleRight fill="#FFFFFF" size="30px"/>}
+					onClick={() => props.isMint ? mint(props.emperorTier) : toMain()}
 				/>
 			</Box>
 			</Box>

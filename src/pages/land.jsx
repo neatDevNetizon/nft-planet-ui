@@ -58,7 +58,7 @@ function Land() {
               </GridItem>
               <GridItem colSpan={2} rowSpan={5} />
               <GridItem colSpan={3} rowSpan={5}>
-                <Emperors />
+                <Emperors isMint={false}/>
               </GridItem >
               <GridItem colSpan={2} rowSpan={5} />
             </Grid>

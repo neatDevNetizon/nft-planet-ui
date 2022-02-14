@@ -47,7 +47,7 @@ export default function Mint(props) {
             <GridItem rowSpan={1} align="center" />
             <GridItem rowSpan={19} align="center">
               <Box width={popupWidth*0.85}>
-                <Emperors />
+                <Emperors isMint={true}/>
               </Box>
             </GridItem>
           </Grid>
@@ -55,4 +55,3 @@ export default function Mint(props) {
       </Box>
     );
 }
-

@@ -1,13 +1,25 @@
+import React                            from 'react';
 import { Grid, GridItem, Center, Box, IconButton }  from '@chakra-ui/react';
 import { CgClose }                      from "react-icons/cg";
 import Nfts                             from '../../components/nfts';
 import Txt                              from '../../components/txt';
+import { WalletOfOwner }                from '../../utils/useContract';
 
 export default function Collection(props) {
   
   const popupHeight = window.innerHeight*0.7;
 
   const popupWidth = window.innerWidth*0.9;
+
+  const [wallet, setWallet] = React.useState([]);
+
+  React.useEffect(() => {
+    (async() => {
+      let _wallet;
+      _wallet = await WalletOfOwner();
+      setWallet(_wallet);
+    })();
+  }, []);
 
   return (
     <Box
@@ -49,7 +61,7 @@ export default function Collection(props) {
           <GridItem rowSpan={20}>
           <Center height="100%">
             <Box w={popupWidth*0.95} height="90%">
-              <Nfts />
+              <Nfts nftIds={wallet} />
             </Box>
           </Center>
           </GridItem>
