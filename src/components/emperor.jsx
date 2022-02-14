@@ -5,12 +5,29 @@ import { Link }                   from "react-router-dom";
 import { Btn } 					  from "./btn"
 import Txt 						  from "./txt"
 import { Mint }                   from "../utils/useContract";
+import { emperorMainTxtPadding,
+		 emperorTierTxtSize,
+		 emperorSubTitleSize,
+		 emperorPixelTxtSize,
+		 emperorPriceTxtSize,
+		 emperorSvgSize,
+		 emperorWidth,
+		 emperorMainHeight,
+		 emperorBorderRadius,
+		 emperorImgBoxSize,
+		 emperorBtnBoxPadding,
+		 emperorMainBoxPadding,
+		 btnIconSize,
+		 btnTextSize,
+		 btnHeight,
+		 btnBorderRadius,
+		 btnIconPadding } 		  from "./componentSize";
 
 const fontFamily = "arial,ｍｓ ｐゴシック,ms pgothic,돋움,dotum,helvetica,sans-serif";	
 
 function EmpTxt(props) {
 
-	const emperorType = props.emperorTier === 1
+	const emperorTier = props.emperorTier === 1
 							? "NATION" 
 							: props.emperorTier === 2
 								? "CONTINENT" 
@@ -23,19 +40,19 @@ function EmpTxt(props) {
 							: "ENTREPRENEURS"
 
 	return(
-		<Box padding="50px 0px">
+		<Box padding={emperorMainTxtPadding + " 0px"}>
 			<Txt fontFamily={fontFamily} 
-				 fontSize="20px"
+				 fontSize={emperorTierTxtSize}
 				 opacity="0.8"
-				 text={emperorType}
+				 text={emperorTier}
 			/>
 			<Txt fontFamily={fontFamily} 
-				 fontSize="20px"
+				 fontSize={emperorTierTxtSize}
 				 opacity="0.8"
 				 text="EMPEROR"
 			/>
 			<Txt fontFamily={fontFamily} 
-				 fontSize="14px"
+				 fontSize={emperorSubTitleSize}
 				 opacity="0.3"
 				 text={subTitle}
 			/>
@@ -51,10 +68,26 @@ function Tip(props) {
 	
 	return(
 		<Box margin="10px">
-			<Txt text="1 NFT" fontSize="14px" fontFamily={fontFamily} />
-			<Txt text={pixelNumber} fontSize="14px" fontFamily={fontFamily}/>
-			<Txt text="PRICE:" fontSize="10px" fontFamily={fontFamily} />
-			<Txt text={priceInUSDC} fontSize="10px" fontFamily={fontFamily} />
+			<Txt 
+				text="1 NFT" 
+				fontSize={emperorPixelTxtSize} 
+				fontFamily={fontFamily} 
+			/>
+			<Txt 
+				text={pixelNumber} 
+				fontSize={emperorPixelTxtSize} 
+				fontFamily={fontFamily}
+			/>
+			<Txt 
+				text="PRICE:" 
+				fontSize={emperorPriceTxtSize} 
+				fontFamily={fontFamily} 
+			/>
+			<Txt 
+				text={priceInUSDC} 
+				fontSize={emperorPriceTxtSize} 
+				fontFamily={fontFamily} 
+			/>
 		</Box>
 	);
 }
@@ -68,25 +101,57 @@ function Img(props) {
 			<svg preserveAspectRatio="xMidYMid meet" 
 				 data-bbox="34.726 34.726 130.548 130.548" 
 				 viewBox="34.726 34.726 130.548 130.548" 
-				 height="165" 
-				 width="165" 
+				 height={emperorSvgSize}
+				 width={emperorSvgSize}
 				 xmlns="http://www.w3.org/2000/svg" 
 				 data-type="color" 
 				 role="presentation" 
 				 aria-hidden="true" 
 				 aria-labelledby="svgcid-g1w5e1-y4huld">
-			<defs>
-				<pattern id={imgId} patternUnits="userSpaceOnUse" x="45" y="45" width="135" height="135">
-					<image href={props.imSrc} width="110" height="110"/>
-				</pattern>
-			</defs>
-			<title></title>
+				<defs>
+					<pattern 
+						id={imgId} 
+						patternUnits="userSpaceOnUse" 
+						x="45"
+						y="45"
+						width="135"
+						height="135"
+					>
+						<image 
+							href={props.imSrc} 
+							width="110" 
+							height="110"
+						/>
+					</pattern>
+				</defs>
 			    <g>
-			        <rect fill={"url(#" + imgId + ")"} x="0" y="0" width="200" height="200"/>
-			        <path fill="#231F20" d="M153.406 46.594v26.279h11.868V34.726h-38.147v11.868h26.279z" data-color="1"></path>
-			        <path fill="#231F20" d="M46.594 46.594h26.279V34.726H34.726v38.147h11.868V46.594z" data-color="1"></path>
-			        <path fill="#231F20" d="M153.406 153.406h-26.279v11.868h38.147v-38.147h-11.868v26.279z" data-color="1"></path>
-			        <path fill="#231F20" d="M46.594 153.406v-26.279H34.726v38.147h38.147v-11.868H46.594z" data-color="1"></path>
+			        <rect 
+			        	fill={"url(#" + imgId + ")"} 
+			        	x="0" 
+			        	y="0" 
+			        	width="200" 
+			        	height="200"
+			        />
+			        <path 
+			        	fill="#231F20" 
+			        	d="M153.406 46.594v26.279h11.868V34.726h-38.147v11.868h26.279z" 
+			        	data-color="1" 
+			        />
+			        <path 
+			        	fill="#231F20" 
+			        	d="M46.594 46.594h26.279V34.726H34.726v38.147h11.868V46.594z" 
+			        	data-color="1"
+			        />
+			        <path 
+			        	fill="#231F20" 
+			        	d="M153.406 153.406h-26.279v11.868h38.147v-38.147h-11.868v26.279z" 
+			        	data-color="1"
+			        />
+			        <path 
+			        	fill="#231F20" 
+			        	d="M46.594 153.406v-26.279H34.726v38.147h38.147v-11.868H46.594z" 
+			        	data-color="1"
+			        />
 			    </g>
 			</svg>
 		</>
@@ -95,11 +160,6 @@ function Img(props) {
 
 function mint(tier) {
 	(async() => { await Mint(Number(tier)) })();
-}
-
-function toMain() {
-	// window.location.href='/main';
-
 }
 
 export default function Emperor(props) {
@@ -112,35 +172,48 @@ export default function Emperor(props) {
 
 	return(
 		<Tooltip label={<Tip pixel={props.pixel} price={props.price} />} 
-				 width="187px" 
-				 borderRadius="20px" 
+				 w={emperorWidth}
+				 borderRadius={emperorBorderRadius}
 				 bg="black"
 				 closeOnClick={false}
 				 onOpen={() => setNftImg(alt)}
 				 onClose={() => setNftImg(img)}
 		>
 			<Box bg="black"
-				 w="187px"
-				 h="315px"
-				 borderRadius="20px"
-				 padding="20px 0px"
+				 w={emperorWidth}
+				 h={emperorMainHeight}
+				 borderRadius={emperorBorderRadius}
+				 padding={emperorMainBoxPadding+" 0px"}
 				 align="center"
 			>
-				<Box h="180px">
+				<Box h={emperorImgBoxSize}>
 					{nftImg}
 				</Box>
-				<Box padding="25px 30px">
-				{props.isMint
-					? <Btn 
-						text="MINT" 
-						rightIcon={<FaArrowAltCircleRight fill="#FFFFFF" size="30px" />}
-						onClick={() => mint(props.emperorTier)}
-					  />
-					: <Link to="/main" style={{ textDecoration: 'none' }}>
-						<Btn text="MINT" rightIcon={<FaArrowAltCircleRight fill="#FFFFFF" size="30px" />} />
-					  </Link>
-				}
-			</Box>
+				<Box padding={emperorBtnBoxPadding+" 0px"}>
+					{props.isMint
+						? <Btn 
+							text="MINT" 
+							textSize={btnTextSize}
+	                 		height={btnHeight}
+	                 		padding={btnIconPadding}
+	                 		borderRadius={btnBorderRadius}
+							rightIcon={<FaArrowAltCircleRight fill="#FFFFFF" size={btnIconSize} />}
+							onClick={() => mint(props.emperorTier)}
+						  />
+						: <Link 
+							to="/main" 
+							style={{ textDecoration: 'none' }}
+						  >
+							<Btn 
+								text="MINT"
+								textSize={btnTextSize}
+	                 			height={btnHeight}
+	                 			padding={btnIconPadding}
+	                 			borderRadius={btnBorderRadius}
+								rightIcon={<FaArrowAltCircleRight fill="#FFFFFF" size={btnIconSize} />} />
+						  </Link>
+					}
+				</Box>
 			</Box>
 		</Tooltip>
 	);

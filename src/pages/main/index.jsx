@@ -11,6 +11,13 @@ import { Btn }                                                            from "
 // import Txt                                                                from "../../components/txt";
 import Collection                                                         from "./collection";
 import Mint                                                               from "./mint";
+import { btnBorderRadius, 
+         btnTextSize,
+         linkIconHeight,
+         btnHeight,
+         btnIconSize,
+         mainLogoWidth,
+         mainLogoTextWidth }                                              from "../../components/componentSize";
 
 function Main() {
 
@@ -116,8 +123,8 @@ function Main() {
           <Center h="100%">
             <Link to="/">
               <HStack spacing='0px'>
-                <Image src="./images/Bild6.webp" alt='logo'/>
-                <Image src="./images/Bild6_text.webp" alt='logo_text'/>
+                <Image src="./images/Bild6.webp" alt='logo' w={mainLogoWidth} />
+                <Image src="./images/Bild6_text.webp" alt='logo_text' w={mainLogoTextWidth} />
               </HStack>
             </Link>
           </Center>
@@ -127,7 +134,10 @@ function Main() {
             <Popup modal 
                    trigger={
                       <Btn text=" MINT " 
-                           rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size="30px"/>}
+                           rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
+                           height={btnHeight}
+                           textSize={btnTextSize}
+                           borderRadius={btnBorderRadius}
                            ref={ref}
                       />
                    }
@@ -141,7 +151,10 @@ function Main() {
             <Popup modal 
                    trigger={
                       <Btn text=" YOUR COLLECTION " 
-                           rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size="30px"/>}
+                           rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
+                           height={btnHeight}
+                           textSize={btnTextSize}
+                           borderRadius={btnBorderRadius}
                            ref={ref}
                       />
                    }
@@ -167,20 +180,25 @@ function Main() {
                 </ChakraLink>
               </div>
             }*/}
-            <Btn onClick={connectMetaMask} text={btnTitle}/>
+            <Btn onClick={connectMetaMask} 
+                 text={btnTitle}
+                 height={btnHeight}
+                 textSize={btnTextSize}
+                 borderRadius={btnBorderRadius}
+            />
           </Center>
         </GridItem>
         <GridItem rowSpan={8} colSpan={4} />
         <GridItem rowSpan={2} colSpan={4}>
           <Center h="50%">
             <ChakraLink href="https://discord.com/">
-              <Image src="./images/discord.webp" margin="10px"/>
+              <Image src="./images/discord.webp" margin="10px" h={linkIconHeight} />
             </ChakraLink>
             <ChakraLink href="https://twitter.com/">
-              <Image src="./images/twitter.webp" margin="10px"/>
+              <Image src="./images/twitter.webp" margin="10px" h={linkIconHeight} />
             </ChakraLink>
             <ChakraLink href="https://telegram.org/">
-              <Image src="./images/telegram.webp" margin="10px"/>
+              <Image src="./images/telegram.webp" margin="10px" h={linkIconHeight} />
             </ChakraLink>
           </Center>
         </GridItem>

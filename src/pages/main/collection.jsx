@@ -4,6 +4,8 @@ import { CgClose }                      from "react-icons/cg";
 import Nfts                             from '../../components/nfts';
 import Txt                              from '../../components/txt';
 import { WalletOfOwner }                from '../../utils/useContract';
+import { mainTitleSize,
+         closeIconSize } from "../../components/componentSize";
 
 export default function Collection(props) {
   
@@ -42,7 +44,7 @@ export default function Collection(props) {
             <Center h="100%">
               <Box width="5%" />
               <Box width="90%">
-                <Txt fontSize="38px" 
+                <Txt fontSize={mainTitleSize}
                      opacity="0.5"
                      text=" YOUR COLLECTION"
                 />
@@ -51,7 +53,7 @@ export default function Collection(props) {
                 <IconButton 
                     onClick={props.close} 
                     colorScheme='transparent'        
-                    icon={<CgClose color="white" size="50px" />}
+                    icon={<CgClose color="white" size={closeIconSize} />}
                     margin="0 10px 0 0"
                 />
               </Box>

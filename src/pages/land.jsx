@@ -7,6 +7,18 @@ import { FaArrowAltCircleDown }                                   from "react-ic
 import Emperors                                                   from "../components/emperors";
 import { Btn }                                                    from "../components/btn";
 import Txt                                                        from "../components/txt";
+import { landLogoHeight, 
+         landBtnHeight, 
+         btnBorderRadius, 
+         btnTextSize,
+         landTitleSize,
+         landSubTitleSize,
+         landTextSize,
+         descriptionIconSize,
+         descriptionTextSize,
+         linkIconHeight,
+         btnHeight,
+         btnIconSize } from "../components/componentSize";
  
 function Land() {
 
@@ -18,7 +30,7 @@ function Land() {
         <GridItem rowSpan={4} />
         <GridItem rowSpan={9}>
           <Center h="100%">
-            <Image src="./images/Bild5.webp" alt='logo' />
+            <Image src="./images/Bild5.webp" alt='logo' h={landLogoHeight}/>
           </Center>
         </GridItem>
         <GridItem rowSpan={1} />
@@ -30,8 +42,10 @@ function Land() {
                                                   behavior: 'smooth'
                                                 })} 
                  text=" UNITED STATES NOW OPEN FOR MINTING " 
-                 height='65px' 
-                 rightIcon={<FaArrowAltCircleDown fill="#FFFFFF" size="30px"/>}
+                 textSize={btnTextSize}
+                 height={landBtnHeight}
+                 borderRadius={btnBorderRadius}
+                 rightIcon={<FaArrowAltCircleDown fill="#FFFFFF" size={btnIconSize}/>}
             />
           </Center>
         </GridItem>
@@ -50,7 +64,7 @@ function Land() {
               <GridItem colSpan={7} rowSpan={2}>
                 <Center h="100%">
                   <Txt  
-                    fontSize='49px'
+                    fontSize={landTitleSize}
                     fontFamily='arial black,arial-w01-black,arial-w02-black,arial-w10 black,sans-serif'
                     text="CLAIM YOUR EMPERORS NOW"  
                   />
@@ -67,7 +81,7 @@ function Land() {
         <GridItem rowSpan={6} />
         <GridItem rowSpan={3} >
           <Center h="100%">
-            <Txt fontSize="40px" text="HOW IT WORKS" />
+            <Txt fontSize={landSubTitleSize} text="HOW IT WORKS" />
           </Center>
         </GridItem>
         <GridItem rowSpan={1} />
@@ -76,14 +90,19 @@ function Land() {
             <Grid w={window.innerWidth} h="100%" templateColumns='repeat(7, 1fr)' gap={1}>
               <GridItem colSpan={2} />
               <GridItem colSpan={1}>
-                <Txt fontSize="40px" text="PHASE 1" isUnderline="true" opacity="0.3"/>
+                <Txt fontSize={landSubTitleSize} text="PHASE 1" isUnderline="true" opacity="0.3"/>
               </GridItem>
               <GridItem colSpan={2}>
-                <Center h="100%"><Txt fontFamily={descriptionFontFamily} 
-                     fontSize="20px"
+                <Center h="100%">
+                  <Box width="100%">
+                    <Txt fontFamily={descriptionFontFamily} 
+                     fontSize={landTextSize}
                      opacity="0.3"
+                     align="left"
                      text="Mint your NFTs  to claim properties/pixels for a reasonable price."
-                /></Center>
+                    />
+                  </Box>
+                </Center>
               </GridItem>
               <GridItem colSpan={2} />
             </Grid>
@@ -95,14 +114,19 @@ function Land() {
             <Grid w={window.innerWidth} h="100%" templateColumns='repeat(7, 1fr)' gap={1}>
               <GridItem colSpan={2} />
               <GridItem colSpan={1}>
-                <Txt fontSize="40px" text="PHASE 2" opacity="0.3" />
+                <Txt fontSize={landSubTitleSize} text="PHASE 2" opacity="0.3" />
               </GridItem>
               <GridItem colSpan={2}>
-                <Center h="100%"><Txt fontFamily={descriptionFontFamily} 
-                     fontSize="20px"
-                     opacity="0.3"
-                     text="Get for every minted emperor NFT the designated pixel amount and upload whatever content you like, so the others on NFTPLANET see what a real emperor looks like."
-                /></Center>
+                <Center h="100%">
+                  <Box width="100%">
+                    <Txt fontFamily={descriptionFontFamily} 
+                       fontSize={landTextSize}
+                       opacity="0.3"
+                       align="left"
+                       text="Get for every minted emperor NFT the designated pixel amount and upload whatever content you like, so the others on NFTPLANET see what a real emperor looks like."
+                    />
+                  </Box>
+                </Center>
               </GridItem>
               <GridItem colSpan={2} />
             </Grid>
@@ -114,14 +138,19 @@ function Land() {
             <Grid w={window.innerWidth} h="100%" templateColumns='repeat(7, 1fr)' gap={1}>
               <GridItem colSpan={2} />
               <GridItem colSpan={1}>
-                <Txt fontSize="40px" text="PHASE 3" opacity="0.3" />
+                <Txt fontSize={landSubTitleSize} text="PHASE 3" opacity="0.3" />
               </GridItem>
               <GridItem colSpan={2}>
-                <Center h="100%"><Txt fontFamily={descriptionFontFamily} 
-                     fontSize="20px"
+                <Center h="100%">
+                  <Box width="100%">
+                    <Txt fontFamily={descriptionFontFamily} 
+                     fontSize={landTextSize}
                      opacity="0.3"
+                     align="left"
                      text="Enter the Pixelverse, start trading and staking your pixels to earn cryptos on rising property prices."
-                /></Center>
+                    />
+                  </Box>
+                </Center>
               </GridItem>
               <GridItem colSpan={2} />
             </Grid>
@@ -130,24 +159,27 @@ function Land() {
         <GridItem rowSpan={3} />
         <GridItem rowSpan={5}>
           <Center h="100%">
-            <Grid w={window.innerWidth} h="100%" templateColumns='repeat(7, 1fr)' gap={35}>
+            <Grid w={window.innerWidth} h="100%" templateColumns='repeat(10, 1fr)' gap={35}>
               <GridItem colSpan={2} />
-              <GridItem colSpan={1}>
-                  <BsShare color="white" size="60px" />
+              <GridItem colSpan={2}>
+                  <BsShare color="white" size={descriptionIconSize} />
                   <Txt fontFamily={descriptionFontFamily} 
-                       fontSize="22px"
+                       fontSize={descriptionTextSize}
+                       align="left"
                        text="Share NFTPLANET to the world to give everyone the chance to participate." />
               </GridItem>
-              <GridItem colSpan={1}>
-                  <IoDocumentOutline color="white" size="60px" />
+              <GridItem colSpan={2}>
+                  <IoDocumentOutline color="white" size={descriptionIconSize} />
                   <Txt fontFamily={descriptionFontFamily} 
-                       fontSize="22px"
+                       fontSize={descriptionTextSize}
+                       align="left"
                        text="Check out our DOCS, FAQ, CODE and the other stuff we are providing over here." />
               </GridItem>
-              <GridItem colSpan={1}>
-                  <FiThumbsUp color="white" size="60px" />
+              <GridItem colSpan={2}>
+                  <FiThumbsUp color="white" size={descriptionIconSize} />
                   <Txt fontFamily={descriptionFontFamily}
-                       fontSize="22px"
+                       fontSize={descriptionTextSize}
+                       align="left"
                        text="Follow NFTPLANET on all plattforms to get the latest news, airdrops and insights." />
               </GridItem>
               <GridItem colSpan={2} />
@@ -158,13 +190,13 @@ function Land() {
         <GridItem rowSpan={3}>
           <Center h="100%">
             <ChakraLink href="https://discord.com/">
-              <Image src="./images/discord.webp" margin="10px"/>
+              <Image src="./images/discord.webp" margin="10px" h={linkIconHeight} />
             </ChakraLink>
             <ChakraLink href="https://twitter.com/">
-              <Image src="./images/twitter.webp" margin="10px"/>
+              <Image src="./images/twitter.webp" margin="10px" h={linkIconHeight} />
             </ChakraLink>
             <ChakraLink href="https://telegram.org/">
-              <Image src="./images/telegram.webp" margin="10px"/>
+              <Image src="./images/telegram.webp" margin="10px" h={linkIconHeight} />
             </ChakraLink>
           </Center>
         </GridItem>
@@ -172,7 +204,14 @@ function Land() {
       </Grid>
 
       <Box position='fixed' top='30px' right='30px'>
-          <Link to="/main" style={{ textDecoration: 'none' }}><Btn text=" GO TO APP " /></Link>
+          <Link to="/main" style={{ textDecoration: 'none' }}>
+            <Btn 
+              text=" GO TO APP " 
+              height={btnHeight}
+              textSize={btnTextSize}
+              borderRadius={btnBorderRadius}
+            />
+          </Link>
       </Box>
     </>
   );
