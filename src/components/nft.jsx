@@ -27,13 +27,13 @@ function Nft(props) {
 	      				  templateColumns='repeat(8, 1fr)' 
 	      				  gap={1}
 	      			>
-	      				<GridItem rowSpan={1} colSpan={1} />
-	      				<GridItem rowSpan={1} colSpan={1}>
+	      				<GridItem rowSpan={2} colSpan={1} />
+	      				<GridItem rowSpan={2} colSpan={1}>
 		      				<Center h="100%">
 		      					<Image src="images/icons/poligon.webp" />
 		      				</Center>
 		      			</GridItem>
-		      			<GridItem rowSpan={1} colSpan={5}>
+		      			<GridItem rowSpan={2} colSpan={5}>
 							<Center h="100%">
 								<Txt fontFamily={priceFontFamily}
 									 fontSize="14px"
@@ -42,8 +42,9 @@ function Nft(props) {
 								/>
 							</Center>
 						</GridItem>
-						<GridItem rowSpan={1} colSpan={1}/>
-		      			<GridItem rowSpan={5} colSpan={8}>
+						<GridItem rowSpan={2} colSpan={1}/>
+
+		      			<GridItem rowSpan={4} colSpan={8}>
 		      				<Center	h="100%">
 								<Image src={imSrc} 
 									   width="103px" 
@@ -52,12 +53,15 @@ function Nft(props) {
 								/>
 							</Center>
 						</GridItem>
+
 						<GridItem rowSpan={1} colSpan={8} />
+
 						<GridItem rowSpan={1} colSpan={1}>
 							<Center h="100%">
 		      					<Image src="images/icons/Logomark-Blue.webp" />
 		      				</Center>
 						</GridItem>
+
 						<GridItem rowSpan={1} colSpan={2}>
 							<Center	h="100%">
 								<Link href={ "https://testnets.opensea.io/assets/" + process.env.REACT_APP_EMP_CONTRACT_ADDRESS + "/" + props.tokenId } isExternal>
