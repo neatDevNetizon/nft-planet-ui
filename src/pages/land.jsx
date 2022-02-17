@@ -234,7 +234,7 @@ export function LinkIconGrop(props) {
           </ChakraLink>
       </WrapItem>
       <WrapItem>
-          <ChakraLink href="https://telegram.org/">
+          <ChakraLink href="https://telegram.org/" isExternal>
             <Center h="100%" margin="15px">
               <FaTelegramPlane
                 color="#cdcdcd"
@@ -244,7 +244,7 @@ export function LinkIconGrop(props) {
           </ChakraLink>
       </WrapItem>
       <WrapItem>
-          <ChakraLink href="https://www.gitbook.com/">
+          <ChakraLink href="https://www.gitbook.com/" isExternal>
             <Center h="100%" margin="15px">
               <SiGitbook 
                 color="#cdcdcd"
