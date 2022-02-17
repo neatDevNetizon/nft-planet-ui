@@ -1,60 +1,54 @@
-import { Grid, 
-         GridItem, 
-         Center, 
-         Box, 
-         IconButton }                     from '@chakra-ui/react';
-import { CgClose }                        from "react-icons/cg";
+import { Center, 
+         Box }                     from '@chakra-ui/react';
+// import { CgClose }                        from "react-icons/cg";
 import Txt                                from '../../components/txt';
 import Emperors                           from '../../components/emperors';
-import { mainTitleSize, closeIconSize }   from "../../components/componentSize";
+// import { closeIconSize }                  from "../../components/componentSize";
 
 export default function Mint(props) {
 
-    const popupHeight = window.innerHeight*0.65;
-    const popupWidth = window.innerWidth*0.6;
-
     return (
-      <Box
-        height= {popupHeight}
-        width = {popupWidth}
-        border='2px outset white'
-        borderRadius='30px'
-        borderColor='white'
-        minHeight='400px'
-        bg='transparent'
-      >
-        <Center h={popupHeight} w={popupWidth}>
-          <Grid h={popupHeight} 
-                w={popupWidth*0.98} 
-                templateRows='repeat(24, 1fr)' 
-                gap={1}
+      <Box w="100%" h="100%">
+        <Center h="100%">
+          <Box
+            height={{base:"100%", md:"80%"}}
+            width ={{base:"100%", md:"60%"}}
+            border={{base:'0px transparent', md:'2px outset white'}}
+            borderRadius={{base:"10px", md:"15px", lg:"20px", xl:"25px", "2xl":"30px"}}
+            align="center"
           >
-            <GridItem rowSpan={4}>
+
+{/*            <Box width="100%" align="right">
+              <IconButton 
+                  onClick={props.close} 
+                  colorScheme='transparent'        
+                  icon={<CgClose color="white" size={closeIconSize} />}
+                  margin={{base:"0px", md:"2px", lg:"4px", xl:"6px", "2xl":"8px"}}
+              />
+            </Box> */}
+            <Box 
+              width="100%" 
+              height="20%"
+              align="center"
+            >
               <Center h="100%">
-                <Box width="10%" />
-                <Box width="80%">
-                  <Txt fontSize={mainTitleSize}
-                       opacity="0.5" 
-                       text="CHOOSE YOUR EMPEROR TO MINT"
-                  />
-                </Box>
-                <Box width="10%" align="right">
-                  <IconButton 
-                      onClick={props.close} 
-                      colorScheme='transparent'        
-                      icon={<CgClose color="white" size={closeIconSize} />}
-                      margin="0 10px 0 0"
-                  />
-                </Box>
+                <Txt fontSize={{base:"16px", sm:"25px", lg:"30px", xl:"35px", "2xl":"40px"}}
+                     opacity="0.5" 
+                     text="CHOOSE YOUR EMPEROR TO MINT"
+                />
               </Center>
-            </GridItem>
-            <GridItem rowSpan={1} align="center" />
-            <GridItem rowSpan={19} align="center">
-              <Box width={popupWidth*0.85}>
-                <Emperors isMint={true}/>
+            </Box>
+            <Box
+              width="100%"
+              height="78%"
+            >
+              <Box w="100%" h="100%" overflow="hidden" position="relative">
+                <Box w={{base:"102%", sm:"105%", md:"104%", lg:"103%", xl:"103%", '2xl':"102%"}} h="100%" overflowY="scroll" overflowX="hidden">
+                  <Emperors isMint={true} spacing={{base:"50px", md:"30px", lg:"40px", xl:"50px", "2xl":"60px"}}/>
+                </Box>
               </Box>
-            </GridItem>
-          </Grid>
+            </Box>
+          </Box>
         </Center>
       </Box>
     );

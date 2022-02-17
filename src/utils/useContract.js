@@ -1,5 +1,6 @@
-import Web3 from "web3";
-import contract from "../contracts/artifacts/Emp.json";
+import Web3                   from "web3";
+import contract               from "../contracts/artifacts/Emp.json";
+import { GetIsConnected }     from "./useIsConnected";
 
 const address = process.env.REACT_APP_EMP_CONTRACT_ADDRESS;
 const price = [
@@ -47,17 +48,28 @@ async function getCurrentAccount() {
 }
 
 export async function Mint(emperorTier) {
-  await LoadWeb3();
-  const account = await getCurrentAccount();
-  await window.contract.methods.mint(emperorTier).send({ 
-    from: account, 
-    value: window.web3.utils.toWei(String(price[Number(emperorTier) - 1]), 'ether') 
-  });
+  const isConnected = GetIsConnected();
+  if (isConnected) {
+    await LoadWeb3();
+    const account = await getCurrentAccount();
+    await window.contract.methods.mint(emperorTier).send({ 
+      from: account, 
+      value: window.web3.utils.toWei(String(price[Number(emperorTier) - 1]), 'ether') 
+    });
+  } else {
+    alert("Connect your wallet!");
+  }
 }
 
 export async function WalletOfOwner() {
-  await LoadWeb3();
-  const account = await getCurrentAccount();
-  const wallet = await window.contract.methods.walletOfOwner(account).call();
-  return wallet;
+  const isConnected = GetIsConnected();
+  if (isConnected) {
+    await LoadWeb3();
+    const account = await getCurrentAccount();
+    const wallet = await window.contract.methods.walletOfOwner(account).call();
+    return wallet;
+  } else {
+    alert("Connect your wallet!");
+    return [];
+  }
 }

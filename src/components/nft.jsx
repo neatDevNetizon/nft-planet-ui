@@ -1,17 +1,18 @@
 import { Box, 
 		 Image, 
-		 Grid, 
-		 GridItem, 
+		 Wrap, 
+		 WrapItem, 
 		 Center, 
 		 Link,
 		 HStack }    		from "@chakra-ui/react";
 import Txt     			   	from "./txt";
+import { Btn } 			    from "./btn";
 import { nftBoxHeight,
 		 nftBoxWidth,
 		 nftImgSize,
-		 nftTxtSize,
 		 borderRadius,
-		 btnIconSize } 		from "./componentSize";
+		 btnIconSize,
+		 btnIconPadding }   from "./componentSize";
 
 function Nft(props) {
 
@@ -19,49 +20,49 @@ function Nft(props) {
 
 	const imSrc = imgBaseURI + props.tokenId + ".png";
 
-	const priceFontFamily = "arial,ｍｓ ｐゴシック,ms pgothic,돋움,dotum,helvetica,sans-serif";
+	const fontFamily = "arial,ｍｓ ｐゴシック,ms pgothic,돋움,dotum,helvetica,sans-serif";
 
 	return(
 		<Box bg="black"
 			 width={nftBoxWidth}
-			 height={nftBoxHeight}
 			 borderRadius={borderRadius}
 			 align="center"
 		>
-			<Center h="100%">
-				<Box width="85%" height="80%" align="center">
-	      			<Grid h="100%" 
-	      				  w="100%" 
-	      				  templateRows='repeat(10, 1fr)' 
-	      				  templateColumns='repeat(8, 1fr)' 
-	      				  gap={1}
-	      			>
-		      			<GridItem rowSpan={9} colSpan={8}>
-		      				<Center	h="100%">
-								<Image src={imSrc} 
-									   width={nftImgSize} 
-									   borderRadius={borderRadius}
-								/>
-							</Center>
-						</GridItem>
-						<GridItem rowSpan={1} colSpan={8}>
-							<Center h="150%">
-								<Link href={ process.env.REACT_APP_OPENSEA_BASE_URL + process.env.REACT_APP_EMP_CONTRACT_ADDRESS + "/" + props.tokenId } isExternal>
-		      						<HStack spacing='5px'>
-		      						<Image src="images/icons/Logomark-Blue.webp" h={btnIconSize}/>
-		      						<Txt fontFamily={priceFontFamily}
-										fontSize={nftTxtSize}
-									 	text="SELL"
-									 	align="left"
-									 	margin="0px 5px"
-									/>
-									</HStack>
-								</Link>								
-		      				</Center>
-						</GridItem>
-	      			</Grid>
-				</Box>
-			</Center>
+			<Box padding="10%" align="center">
+				<Image src={imSrc} borderRadius={borderRadius} />
+			</Box>
+			<Box padding="0% 10% 10% 10%" align="center">
+				<Link 
+					href={ process.env.REACT_APP_OPENSEA_BASE_URL + process.env.REACT_APP_EMP_CONTRACT_ADDRESS + "/" + props.tokenId }
+					style={{ textDecoration: 'none' }}
+					isExternal
+				>
+					<Box 
+						border='3px solid #FFFFFF'
+						borderRadius={{base:"5px", lg:"10px", xl:"15px"}}
+						padding={{base:"2px", lg:"5px", xl:"10px"}}
+						align="center"
+						_hover={{ bg: '#ebedf0' }}
+						_active={{
+						    bg: '#dddfe2',
+						    transform: 'scale(0.98)',
+						    borderColor: '#bec3c9',
+						}}
+						_focus={{
+						    boxShadow: '0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)',
+						}}
+					>
+  						<HStack spacing='5px' align="center" justify="center">
+	  						<Image src="images/icons/Logomark-Blue.webp" h={btnIconSize}/>
+	  						<Txt fontFamily={fontFamily}
+							 	text="SELL"
+							 	align="left"
+							 	margin="0px 5px"
+							/>
+						</HStack>
+					</Box>
+				</Link>								
+			</Box>
 		</Box>
 	)
 }

@@ -1,149 +1,302 @@
 import React                                 from 'react';
-import Popup                                 from 'reactjs-popup';
 import { useEffect, useState }               from "react";
-import { useMetamask }                       from "use-metamask";
+// import Popup                                 from 'reactjs-popup';
+// import { useMetamask }                       from "use-metamask";
+import { useMetaMask}                        from "metamask-react";
 import { Link }                              from "react-router-dom";
 import { IoIosArrowDropdownCircle }          from "react-icons/io";
+import { AiOutlineLogout, AiOutlineLogin }   from "react-icons/ai";
 import { ethers }                            from "ethers";
-import { Image, 
-         Grid, 
-         GridItem, 
+import { Image,
+         Box, 
+         Wrap, 
+         WrapItem, 
          Center, 
-         HStack, 
-         Link as ChakraLink }                from "@chakra-ui/react";
+         HStack }                            from "@chakra-ui/react";
 import { Btn }                               from "../../components/btn";
-import Collection                            from "./collection";
 import Mint                                  from "./mint";
-import { btnBorderRadius, 
-         btnTextSize,
-         linkIconHeight,
-         btnHeight,
-         btnIconSize,
-         mainLogoWidth,
-         mainLogoTextWidth }                 from "../../components/componentSize";
+import Collection                            from "./collection";
+import { btnIconSize }                       from "../../components/componentSize";
+import { LinkIconGrop }                      from "../land"
+import { SetIsConnected }                    from "../../utils/useIsConnected"
 
 function Main() {
 
-  const chainId = process.env.REACT_APP_CHAIN_ID;
+  // const ref = React.createRef();
 
-  const ref = React.createRef();
+  // const { connect, metaState } = useMetamask();
 
-  const { connect, metaState } = useMetamask();
+  // const connectMetaMask = () => {
+  //   if (!metaState.isAvailable)
+  //     alert("You don't have Metamask installed! https://metamask.io");
+  //   else if (!metaState.isConnected) {
+  //     (async () => {
+  //       try {
+  //           await connect(ethers.providers.Web3Provider, "any");
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+  //     })();
+  //   }
+  //   else if (metaState.chain.id!==supportedChainId)
+  //     alert("Wrong chain selected! Please select Rinkeby network");
+  // }
 
-  const [ btnTitle, setBtnTitle ] = useState("CONNECT WALLET");
+  // useEffect(() => {
+  //   if (metaState.isAvailable && !metaState.isConnected && metaState.chain.id===supportedChainId) {
+  //     (async () => {
+  //       try {
+  //           await connect(ethers.providers.Web3Provider, "any");
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+  //     })();
+  //   }
+
+  //   if (metaState.isAvailable && metaState.isConnected && metaState.chain.id===supportedChainId) {
+  //     setBtnTitle(String(metaState.account[0]).substr(0, 7)+ "..."+ String(metaState.account[0]).substr(-7));
+  //     setBtnBg("rgba(0, 255, 0, 0.6)");
+  //   } else {     
+  //     if (!metaState.isAvailable) {
+  //       setBtnTitle("WALLET ERROR");
+  //       setBtnBg("rgba(255, 0, 0, 0.6)");
+  //     } else {
+  //       setBtnTitle("CONNECT WALLET");
+  //       setBtnBg("rgba(0, 0, 0, 0.6)");
+  //     }
+  //   }
+  // }, [metaState.isAvailable, metaState.isConnected, metaState.chain, metaState.account, connect, supportedChainId]);
+
+  const supportedChainId = process.env.REACT_APP_CHAIN_ID;
+
+  const supportedChainName = process.env.REACT_APP_CHAIN_NAME;
+
+  const [ btnTitle, setBtnTitle ] = useState();
+
+  const [ btnBg, setBtnBg ] = useState();
+
+  const [ mainRoute, setMainRoute ] = useState("")
+
+  const [ isConnected, setIsConnected ] = useState(false);
+
+  const { status, connect, account, chainId, ethereum } = useMetaMask();
 
   const connectMetaMask = () => {
-    if (metaState.isAvailable && !metaState.isConnected) {
-      (async () => {
-        try {
-            await connect(ethers.providers.Web3Provider, "any");
-        } catch (error) {
-          console.log(error);
+    if (status === "initializing")
+      alert("Wallet Initializing...");
+    else if(status === "unavailable")
+      alert("Please install Metamask. https://metamask.io");
+    else if(status === "connecting")
+      alert("Wallet Connecting...");
+    else if(chainId !== supportedChainId) 
+      alert("Wrong chain! Please select "+supportedChainName+" chain in your metamask.");
+    else {
+      if (!isConnected) {
+        if (status === "notConnected") {
+          (async () => {
+            try {
+                await connect(ethers.providers.Web3Provider, "any");
+            } catch (error) {
+              console.log(error);
+            }
+          })();
         }
-      })();
-    } else if (!metaState.isAvailable)
-        alert("You don't have Metamask installed! https://metamask.io");
-
-    if (metaState.isConnected && metaState.chain.id!==chainId)
-        alert("Wrong chain selected! Please select Rinkeby network");
+        setIsConnected(true);
+        SetIsConnected(true);
+      } else {
+        setIsConnected(false);
+        SetIsConnected(false);
+      }
+    }
   }
 
   useEffect(() => {
-    if (metaState.isAvailable && !metaState.isConnected && metaState.chain.id===chainId) {
-      (async () => {
-        try {
-            await connect(ethers.providers.Web3Provider, "any");
-        } catch (error) {
-          console.log(error);
-        }
-      })();
+    if (status === "initializing") {
+      setBtnTitle("WALLET ONGOING...");
+      setBtnBg("rgba(0, 0, 0, 0.2)");
     }
-
-    if (metaState.isAvailable && metaState.isConnected && metaState.chain.id===chainId) {
-      setBtnTitle(String(metaState.account[0]).substr(0, 7)+ "..."+ String(metaState.account[0]).substr(-7));
-    } else {
+    if (status === "unavailable") {
+      setBtnTitle("NOT INSTALLED");
+      setBtnBg("rgba(255, 0, 0, 0.6)");
+    }
+    if (status === "connecting") {
+      setBtnTitle("CONNECTING...");
+      setBtnBg("rgba(0, 0, 0, 0.2)");
+    }
+    if (status === "notConnected") {
       setBtnTitle("CONNECT WALLET");
+      setBtnBg("rgba(0, 0, 0, 0.6)");
+      setIsConnected(false);
+      SetIsConnected(false);
     }
-  }, [metaState.isAvailable, metaState.isConnected, metaState.chain, metaState.account, connect, chainId]);
+    if (status === "connected") {
+      if (isConnected) {
+        setBtnTitle(String(account).substr(0, 7)+ "..."+ String(account).substr(-7));
+        setBtnBg("rgba(0, 255, 0, 0.6)");
+      } else {
+        setBtnTitle("CONNECT WALLET");
+        setBtnBg("rgba(0, 0, 0, 0.6)");
+      }
+    }
+    if (chainId !== supportedChainId){
+      setBtnTitle("WRONG CHAIN");
+      setBtnBg("rgba(255, 0, 0, 0.6)");
+      setIsConnected(false);
+      SetIsConnected(false);
+    } 
+  }, [status, isConnected, account, chainId]);
+
 
   return (
-    <>
-      <Grid
-        h={window.innerHeight}
-        templateRows='repeat(12, 1fr)'
-        templateColumns='repeat(4, 1fr)'
-        gap={4}
+    <Box minHeight={window.innerHeight} overflow="hidden">
+      <Box 
+        pos="fixed" 
+        top="0px"
+        w="100%" 
+        h={{base:"60px", md:"100px"}}
+        align="center"
+        marginTop={{base:"60px", md:"0px"}}
       >
-        <GridItem rowSpan={2} colSpan={1}>
-          <Center h="100%">
-            <Link to="/">
+        <Box 
+          pos="fixed" 
+          top='0px'
+          w="100%"
+          h={{base:"60px", md:"100px"}}
+          align="center"
+          bg={{base:"black", md:"transparent"}}
+        >
+          <Center h="100%" w="100%" paddingLeft="5%" paddingRight="5%">
+            <Box width="40%" align="left">
               <HStack spacing='0px'>
-                <Image src="./images/Bild6.webp" alt='logo' w={mainLogoWidth} />
-                <Image src="./images/Bild6_text.webp" alt='logo_text' w={mainLogoTextWidth} />
+                <Link 
+                  to="/"
+                  w={{base:"20px", sm:"20px", md:"25px", lg:"35px", xl:"50px", '2xl':"59px"}}
+                >
+                  <Image 
+                    src="./images/Bild6.webp" 
+                    alt='logo'                   
+                  />
+                </Link>
+                <Link 
+                  to="/"
+                  w={{base:"20px", sm:"20px", md:"25px", lg:"35px", xl:"50px", '2xl':"59px"}}
+                >
+                  <Image 
+                    src="./images/Bild6_text.webp" 
+                    alt='logo_text' 
+                  />
+                </Link>
               </HStack>
-            </Link>
+            </Box>
+            <Box width="60%" align="right">
+              <Btn 
+                onClick={connectMetaMask} 
+                text={btnTitle} 
+                bg={btnBg}
+                width={{base:"200px", sm:"200px", md:"220px", lg:"240px", xl:"260px", "2xl":"280px"}}
+                rightIcon={
+                  isConnected
+                    ? <AiOutlineLogout color="white" size={btnIconSize} />
+                    : <AiOutlineLogin color="white" size={btnIconSize} />
+                  }
+              />
+            </Box>
           </Center>
-        </GridItem>
-        <GridItem rowSpan={2} colSpan={1}>
-          <Center h="100%" w="100%">
-            <Popup modal 
-                   trigger={
-                      <Btn text=" MINT " 
-                           rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
-                           height={btnHeight}
-                           textSize={btnTextSize}
-                           borderRadius={btnBorderRadius}
-                           ref={ref}
+        </Box>
+
+        <Wrap 
+            width="100%"
+            align="center"
+            justify="center"
+            spacing="0px"
+          >
+            <WrapItem>
+              <Box 
+                height={{base:"60px", md:"100px"}} 
+                padding={{base:"0px 10px", md:"0px 15px", lg:"0px 30px", xl:"0px 50px", '2xl':"0px 110px"}}
+              >
+                <Center h="100%">
+                  <Btn 
+                    text=" MINT "
+                    onClick={() => setMainRoute("mint")}
+                    rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
+                    padding={{base:'10px'}}
+                  />
+  {/*                <Popup 
+                    modal 
+                    trigger={
+                      <Btn 
+                        text=" MINT " 
+                        rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
+                        padding={{base:'10px'}}
+                        noIconInMobile={{base:'false', md:'true'}}
+                        ref={ref}
                       />
-                   }
-            >
-              {close => <Mint close={close} />}
-            </Popup>
-          </Center>
-        </GridItem>
-        <GridItem rowSpan={2} colSpan={1}>
-          <Center h="100%" w="100%">
-            <Popup modal 
-                   trigger={
-                      <Btn text=" YOUR COLLECTION " 
-                           rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
-                           height={btnHeight}
-                           textSize={btnTextSize}
-                           borderRadius={btnBorderRadius}
-                           ref={ref}
+                    }
+                  >
+                    {close => <Mint close={close} />}
+                  </Popup>*/}
+                </Center>
+              </Box>
+            </WrapItem>
+            <WrapItem>
+              <Box 
+                height={{base:"60px", md:"100px"}} 
+                padding={{base:"0px", md:"0px 15px", lg:"0px 30px", xl:"0px 50px", '2xl':"0px 110px"}}
+              >
+                <Center h="100%">
+                  <Btn
+                    onClick={() => setMainRoute("collection")}
+                    text=" YOUR COLLECTION " 
+                    rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
+                  />
+  {/*                <Popup 
+                    modal 
+                    trigger={
+                      <Btn 
+                        text=" YOUR COLLECTION " 
+                        rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
+                        ref={ref}
                       />
-                   }
-            >
-              {close => <Collection close={close} />}
-            </Popup>
-          </Center>
-        </GridItem>
-        <GridItem rowSpan={2} colSpan={1}>
-          <Center h="100%">
-            <Btn onClick={connectMetaMask} 
-                 text={btnTitle}
-                 height={btnHeight}
-                 textSize={btnTextSize}
-                 borderRadius={btnBorderRadius}
-            />
-          </Center>
-        </GridItem>
-        <GridItem rowSpan={8} colSpan={4} />
-        <GridItem rowSpan={2} colSpan={4}>
-          <Center h="50%">
-            <ChakraLink href="https://discord.com/">
-              <Image src="./images/discord.webp" margin="10px" h={linkIconHeight} />
-            </ChakraLink>
-            <ChakraLink href="https://twitter.com/">
-              <Image src="./images/twitter.webp" margin="10px" h={linkIconHeight} />
-            </ChakraLink>
-            <ChakraLink href="https://telegram.org/">
-              <Image src="./images/telegram.webp" margin="10px" h={linkIconHeight} />
-            </ChakraLink>
-          </Center>
-        </GridItem>
-      </Grid>
-    </>
+                    }
+                  >
+                    {close => <Collection close={close} />}
+                  </Popup>*/}
+                </Center>
+              </Box>
+            </WrapItem>
+          </Wrap>
+      </Box>
+
+      <Box
+        align="center"
+        marginTop={{base:"120px", md:"100px"}}
+        marginBottom={{base:"60px", md:"100px"}}
+        width="100%"
+        height={{base:window.innerHeight-180, md:window.innerHeight-200}}
+      >
+        {
+          (mainRoute === "mint")
+            ? <Mint />
+            : (mainRoute === "collection")
+                ? <Collection />
+                : <></>
+        }
+      </Box>
+
+      <Box
+        pos="fixed"
+        bottom="0px"
+        w="100%"
+        h={{base:"60px", md:"100px"}}
+        align="center"
+        bg={{base:"black", md:"transparent"}}
+      >
+        <Center h="100%">
+          <LinkIconGrop />
+        </Center>
+      </Box>
+    </Box>
   );
 
 }

@@ -10,7 +10,6 @@ function Layout() {
       bgRepeat="no-repeat"
       bgSize="100% 100%"
       bgAttachment="fixed"
-      minHeight="100%"
     >
       <Outlet />
     </Box>

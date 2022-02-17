@@ -1,21 +1,13 @@
+import { Center, 
+         Box }                from '@chakra-ui/react';
 import React                  from 'react';
-import { Grid, 
-         GridItem, 
-         Center, 
-         Box, 
-         IconButton }         from '@chakra-ui/react';
-import { CgClose }            from "react-icons/cg";
-import Nfts                   from '../../components/nfts';
+// import { CgClose }            from "react-icons/cg";
 import Txt                    from '../../components/txt';
+import Nfts                   from '../../components/nfts';
+// import { closeIconSize }      from "../../components/componentSize";
 import { WalletOfOwner }      from '../../utils/useContract';
-import { mainTitleSize,
-         closeIconSize }      from "../../components/componentSize";
 
 export default function Collection(props) {
-  
-  const popupHeight = window.innerHeight*0.65;
-
-  const popupWidth = window.innerWidth*0.9;
 
   const [wallet, setWallet] = React.useState([]);
 
@@ -27,52 +19,49 @@ export default function Collection(props) {
     })();
   }, []);
 
-  return (
-    <Box
-      height={popupHeight}
-      width={popupWidth}
-      border='2px outset white'
-      borderRadius='30px'
-      borderColor='white'
-      fontSize='14px'
-      minHeight='400px'
-      bg='transparent'
-    >
-      <Center h={popupHeight}>
-        <Grid h={popupHeight}
-              w={popupWidth*0.98}
-              templateRows='repeat(24, 1fr)'
-              gap={1}
-        >
-          <GridItem rowSpan={4}>
-            <Center h="100%">
-              <Box width="5%" />
-              <Box width="90%">
-                <Txt fontSize={mainTitleSize}
-                     opacity="0.5"
-                     text=" YOUR COLLECTION"
-                />
-              </Box>
-              <Box width="5%" align="right">
-                <IconButton 
-                    onClick={props.close} 
-                    colorScheme='transparent'        
-                    icon={<CgClose color="white" size={closeIconSize} />}
-                    margin="0 10px 0 0"
-                />
-              </Box>
-            </Center>
-          </GridItem>
+    return (
+      <Box w="100%" h="100%">
+        <Center h="100%">
+          <Box
+            height={{base:"100%", md:"80%"}}
+            width ={{base:"100%", md:"70%"}}
+            border={{base:'0px transparent', md:'2px outset white'}}
+            borderRadius={{base:"10px", md:"15px", lg:"20px", xl:"25px", "2xl":"30px"}}
+            align="center"
+          >
 
-          <GridItem rowSpan={20}>
-          <Center height="100%">
-            <Box w={popupWidth*0.95} height="90%">
-              <Nfts nftIds={wallet} />
+{/*            <Box width="100%" align="right">
+              <IconButton 
+                  onClick={props.close} 
+                  colorScheme='transparent'        
+                  icon={<CgClose color="white" size={closeIconSize} />}
+                  margin={{base:"0px", md:"2px", lg:"4px", xl:"6px", "2xl":"8px"}}
+              />
+            </Box> */}
+            <Box 
+              width="100%" 
+              height="20%"
+              align="center"
+            >
+              <Center h="100%">
+                <Txt fontSize={{base:"16px", sm:"25px", lg:"30px", xl:"35px", "2xl":"40px"}}
+                     opacity="0.5" 
+                     text="YOUR COLLECTION"
+                />
+              </Center>
             </Box>
-          </Center>
-          </GridItem>
-        </Grid>
-      </Center>
-    </Box>
-  );
+            <Box
+              width="100%"
+              height="78%"
+            >
+              <Box w="100%" h="100%" overflow="hidden" position="relative">
+                <Box w={{base:"102%", sm:"105%", md:"104%", lg:"103%", xl:"102%", '2xl':"102%"}} h="100%" overflowY="scroll" overflowX="hidden">
+                  <Nfts nftIds={wallet} />
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        </Center>
+      </Box>
+    );
 }

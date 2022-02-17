@@ -1,6 +1,6 @@
 import { useState }				  from "react";
 import { FaArrowAltCircleRight }  from "react-icons/fa";
-import { Box, Tooltip }      	  from "@chakra-ui/react";
+import { Box, Tooltip }           from "@chakra-ui/react";
 import { Link }                   from "react-router-dom";
 import { Btn } 					  from "./btn"
 import Txt 						  from "./txt"
@@ -18,11 +18,7 @@ import { emperorMainTxtPadding,
 		 emperorBtnBoxPadding,
 		 emperorMainBoxPadding,
 		 btnIconSize,
-		 btnTextSize,
-		 btnHeight,
-		 btnBorderRadius,
 		 btnIconPadding } 		  from "./componentSize";
-console.log(emperorWidth)
 
 const fontFamily = "arial,ｍｓ ｐゴシック,ms pgothic,돋움,dotum,helvetica,sans-serif";	
 
@@ -65,7 +61,7 @@ function Tip(props) {
 	
 	const pixelNumber = props.pixel + " PIXEL"
 
-	const priceInUSDC = props.price + " USDC"
+	const priceInMATIC = props.price + " MATIC"
 	
 	return(
 		<Box margin="10px">
@@ -85,7 +81,7 @@ function Tip(props) {
 				fontFamily={fontFamily} 
 			/>
 			<Txt 
-				text={priceInUSDC} 
+				text={priceInMATIC} 
 				fontSize={emperorPriceTxtSize} 
 				fontFamily={fontFamily} 
 			/>
@@ -175,7 +171,7 @@ export default function Emperor(props) {
 		<Tooltip label={<Tip pixel={props.pixel} price={props.price} />} 
 				 width={emperorWidth}
 				 borderRadius={emperorBorderRadius}
-				 bg="black"
+				 bg="#171923"
 				 closeOnClick={false}
 				 onOpen={() => setNftImg(alt)}
 				 onClose={() => setNftImg(img)}
@@ -194,10 +190,7 @@ export default function Emperor(props) {
 					{props.isMint
 						? <Btn 
 							text="MINT" 
-							textSize={btnTextSize}
-	                 		height={btnHeight}
 	                 		padding={btnIconPadding}
-	                 		borderRadius={btnBorderRadius}
 							rightIcon={<FaArrowAltCircleRight fill="#FFFFFF" size={btnIconSize} />}
 							onClick={() => mint(props.emperorTier)}
 						  />
@@ -207,10 +200,7 @@ export default function Emperor(props) {
 						  >
 							<Btn 
 								text="MINT"
-								textSize={btnTextSize}
-	                 			height={btnHeight}
 	                 			padding={btnIconPadding}
-	                 			borderRadius={btnBorderRadius}
 								rightIcon={<FaArrowAltCircleRight fill="#FFFFFF" size={btnIconSize} />} />
 						  </Link>
 					}

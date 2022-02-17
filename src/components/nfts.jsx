@@ -14,16 +14,14 @@ function Nfts(props) {
   const items = getItems(tokenIds);
 
   return (
-    <Box h="100%" w="100%" overflowY="hidden" overflowX="hidden">
-        <Box x="5%" h="100%" w="105%" overflowY="scroll" overflowX="hidden">
-            <Wrap spacing='20px'>
-                {items.map(({ id }) => (
-                    <WrapItem key={id}>
-                        <Nft tokenId={Number(tokenIds[id])} />
-                    </WrapItem>
-                ))}
-            </Wrap>
-        </Box>
+    <Box w="100%" align="center">
+        <Wrap spacing='20px' align="center" justify="center">
+            {items.map(({ id }) => (
+                <WrapItem key={id}>
+                    <Nft tokenId={Number(tokenIds[id])} />
+                </WrapItem>
+            ))}
+        </Wrap>
     </Box>
   )
 }

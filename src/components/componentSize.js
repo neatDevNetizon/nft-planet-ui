@@ -11,44 +11,37 @@ const sizeRate = ratio > ratio0
 					? widthRate
 					: heightRate;
 
-export const btnBorderRadius = String(Math.floor(20*sizeRate))+"px";
-export const btnIconSize     = String(Math.floor(30*sizeRate))+"px";
-export const btnTextSize     = String(Math.floor(19*sizeRate))+"px";
-export const btnHeight       = String(Math.floor(55*sizeRate))+"px";
-export const btnIconPadding  = String(Math.floor(10*sizeRate))+"px";
+export const btnIconSize     = Math.max(String(Math.floor(30*sizeRate)), 20)+"px";
+export const btnTextSize     = Math.max(String(Math.floor(19*sizeRate)), 12)+"px";
+export const btnHeight       = Math.max(String(Math.floor(55*sizeRate)), 28)+"px";
+export const btnIconPadding  = Math.max(String(Math.floor(10*sizeRate)), 5)+"px";
 
-export const linkIconHeight = String(Math.floor(44*sizeRate))+"px";
-export const closeIconSize  = String(Math.floor(50*sizeRate))+"px";
-export const borderRadius   = String(Math.floor(20*sizeRate))+"px";
+export const linkIconHeight = Math.max(String(Math.floor(44*sizeRate)), 22)+"px";
+export const closeIconSize  = Math.max(String(Math.floor(50*sizeRate)), 25)+"px";
+export const borderRadius   = Math.max(String(Math.floor(20*sizeRate)), 10)+"px";
 
-export const landLogoHeight      = String(Math.floor(414*sizeRate))+"px";
-export const landBtnHeight       = String(Math.floor( 65*sizeRate))+"px";
-export const landTitleSize       = String(Math.floor( 49*sizeRate))+"px";
-export const landSubTitleSize    = String(Math.floor( 40*sizeRate))+"px";
-export const landTextSize        = String(Math.floor( 20*sizeRate))+"px";
-export const descriptionTextSize = String(Math.floor( 22*sizeRate))+"px";
-export const descriptionIconSize = String(Math.floor( 60*sizeRate))+"px";
+export const landTextSize        = Math.max(String(Math.floor( 20*sizeRate)), 10)+"px";
+export const descriptionTextSize = Math.max(String(Math.floor( 22*sizeRate)), 11)+"px";
+export const descriptionIconSize = Math.max(String(Math.floor( 60*sizeRate)), 30)+"px";
 
-export const mainTitleSize     = String(Math.floor( 38*sizeRate))+"px";
-export const mainLogoTextWidth = String(Math.floor(187*sizeRate))+"px";
-export const mainLogoWidth     = String(Math.floor( 59*sizeRate))+"px";
+export const mainLogoTextWidth = Math.max(String(Math.floor(187*sizeRate)), 94)+"px";
+export const mainLogoWidth     = Math.max(String(Math.floor( 59*sizeRate)), 30)+"px";
 
-export const emperorWidth          = String(Math.floor(187*sizeRate))+"px";
-export const emperorSvgSize        = String(Math.floor(165*sizeRate))+"px";
-export const emperorMainHeight     = String(Math.floor(315*sizeRate))+"px";
-export const emperorMainTxtPadding = String(Math.floor( 50*sizeRate))+"px";
-export const emperorMainBoxPadding = String(Math.floor( 20*sizeRate))+"px";
-export const emperorBorderRadius   = String(Math.floor( 20*sizeRate))+"px";
-export const emperorImgBoxSize     = String(Math.floor(180*sizeRate))+"px";
-export const emperorTierTxtSize    = String(Math.floor( 20*sizeRate))+"px";
-export const emperorSubTitleSize   = String(Math.floor( 14*sizeRate))+"px";
-export const emperorPixelTxtSize   = String(Math.floor( 14*sizeRate))+"px";
-export const emperorPriceTxtSize   = String(Math.floor( 10*sizeRate))+"px";
-export const emperorBtnBoxPadding  = String(Math.floor( 25*sizeRate))+"px";
+export const emperorWidth          = Math.max(String(Math.floor(187*sizeRate)), 127)+"px";
+export const emperorSvgSize        = Math.max(String(Math.floor(165*sizeRate)), 110)+"px";
+export const emperorMainHeight     = Math.max(String(Math.floor(315*sizeRate)), 210)+"px";
+export const emperorMainTxtPadding = Math.max(String(Math.floor( 50*sizeRate)), 33)+"px";
+export const emperorMainBoxPadding = Math.max(String(Math.floor( 20*sizeRate)), 13)+"px";
+export const emperorBorderRadius   = Math.max(String(Math.floor( 20*sizeRate)), 13)+"px";
+export const emperorImgBoxSize     = Math.max(String(Math.floor(180*sizeRate)), 120)+"px";
+export const emperorTierTxtSize    = Math.max(String(Math.floor( 20*sizeRate)), 13)+"px";
+export const emperorSubTitleSize   = Math.max(String(Math.floor( 14*sizeRate)), 9)+"px";
+export const emperorPixelTxtSize   = Math.max(String(Math.floor( 14*sizeRate)), 9)+"px";
+export const emperorPriceTxtSize   = Math.max(String(Math.floor( 10*sizeRate)), 7)+"px";
+export const emperorBtnBoxPadding  = Math.max(String(Math.floor( 25*sizeRate)), 17)+"px";
 
-export const nftBoxHeight = String(Math.floor( 240*sizeRate))+"px";
-export const nftBoxWidth  = String(Math.floor( 215*sizeRate))+"px";
-export const nftImgSize   = String(Math.floor( 150*sizeRate))+"px";
-export const nftTxtSize   = String(Math.floor(  25*sizeRate))+"px";
+export const nftBoxHeight = Math.max(String(Math.floor( 240*sizeRate)), 172)+"px";
+export const nftBoxWidth  = Math.max(String(Math.floor( 215*sizeRate)), 158)+"px";
+export const nftImgSize   = Math.max(String(Math.floor( 150*sizeRate)), 120)+"px";
 
 
