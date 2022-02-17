@@ -173,7 +173,6 @@ function Main() {
                     text=" MINT "
                     onClick={() => setMainRoute("mint")}
                     rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
-                    padding={{base:'10px'}}
                   />
   {/*                <Popup 
                     modal 
@@ -181,8 +180,6 @@ function Main() {
                       <Btn 
                         text=" MINT " 
                         rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
-                        padding={{base:'10px'}}
-                        noIconInMobile={{base:'false', md:'true'}}
                         ref={ref}
                       />
                     }
