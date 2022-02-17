@@ -79,7 +79,7 @@ function Main() {
 
   const [ isConnected, setIsConnected ] = useState(false);
 
-  const { status, connect, account, chainId, ethereum } = useMetaMask();
+  const { status, connect, account, chainId } = useMetaMask();
 
   const connectMetaMask = () => {
     if (status === "initializing")
@@ -144,7 +144,7 @@ function Main() {
       setIsConnected(false);
       SetIsConnected(false);
     } 
-  }, [status, isConnected, account, chainId]);
+  }, [status, isConnected, account, chainId, supportedChainId]);
 
 
   return (
