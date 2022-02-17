@@ -5,8 +5,7 @@ import { Box,
 import Txt     			   	from "./txt";
 import { nftBoxWidth,
 		 borderRadius,
-		 btnIconSize,
-		 btnIconPadding }   from "./componentSize";
+		 btnIconSize }   from "./componentSize";
 
 function Nft(props) {
 
