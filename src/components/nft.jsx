@@ -3,8 +3,7 @@ import { Box,
 		 Link,
 		 HStack }    		from "@chakra-ui/react";
 import Txt     			   	from "./txt";
-import { nftBoxHeight,
-		 nftBoxWidth,
+import { nftBoxWidth,
 		 nftImgSize,
 		 borderRadius,
 		 btnIconSize,
