@@ -224,7 +224,7 @@ export function LinkIconGrop(props) {
           </ChakraLink>
       </WrapItem>
       <WrapItem>
-          <ChakraLink href="https://twitter.com/">
+          <ChakraLink href="https://twitter.com/" isExternal>
             <Center h="100%" margin="15px">
               <FaTwitter
                 color="#cdcdcd"
