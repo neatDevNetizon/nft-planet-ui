@@ -4,7 +4,6 @@ import { Box,
 		 Link,
 		 HStack }    		from "@chakra-ui/react";
 import Txt     			   	from "./txt";
-import { Btn } 			    from "./btn";
 import { nftBoxHeight,
 		 nftBoxWidth,
 		 nftImgSize,
