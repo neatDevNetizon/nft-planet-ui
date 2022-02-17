@@ -11,6 +11,7 @@ import { Image,
          WrapItem, 
          Center, 
          HStack }                            from "@chakra-ui/react";
+import { Popup }                             from "reactjs-popup";
 import { Btn }                               from "../../components/btn";
 import Mint                                  from "./mint";
 import Collection                            from "./collection";
@@ -169,23 +170,23 @@ function Main() {
                 padding={{base:"0px 10px", md:"0px 15px", lg:"0px 30px", xl:"0px 50px", '2xl':"0px 110px"}}
               >
                 <Center h="100%">
-                  <Btn 
+{/*                  <Btn 
                     text=" MINT "
                     onClick={() => setMainRoute("mint")}
                     rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
-                  />
-  {/*                <Popup 
+                  />*/}
+                  <Popup 
                     modal 
                     trigger={
                       <Btn 
                         text=" MINT " 
                         rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
-                        ref={ref}
+                        // ref={ref}
                       />
                     }
                   >
-                    {close => <Mint close={close} />}
-                  </Popup>*/}
+                    {close => <Box width={{base:window.innerWidth*0.9, sm:window.innerWidth*0.6}} height={window.innerHeight*0.7}><Mint close={close} /></Box>}
+                  </Popup>
                 </Center>
               </Box>
             </WrapItem>
@@ -195,30 +196,30 @@ function Main() {
                 padding={{base:"0px", md:"0px 15px", lg:"0px 30px", xl:"0px 50px", '2xl':"0px 110px"}}
               >
                 <Center h="100%">
-                  <Btn
+{/*                  <Btn
                     onClick={() => setMainRoute("collection")}
                     text=" YOUR COLLECTION " 
                     rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
-                  />
-  {/*                <Popup 
+                  />*/}
+                  <Popup 
                     modal 
                     trigger={
                       <Btn 
                         text=" YOUR COLLECTION " 
                         rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
-                        ref={ref}
+                        // ref={ref}
                       />
                     }
                   >
-                    {close => <Collection close={close} />}
-                  </Popup>*/}
+                    {close => <Box width={{base:window.innerWidth*0.9, sm:window.innerWidth*0.75}} height={window.innerHeight*0.7}><Collection close={close} /></Box>}
+                  </Popup>
                 </Center>
               </Box>
             </WrapItem>
           </Wrap>
       </Box>
 
-      <Box
+{/*      <Box
         align="center"
         marginTop={{base:"120px", md:"100px"}}
         marginBottom={{base:"60px", md:"100px"}}
@@ -232,7 +233,7 @@ function Main() {
                 ? <Collection />
                 : <></>
         }
-      </Box>
+      </Box>*/}
 
       <Box
         pos="fixed"
