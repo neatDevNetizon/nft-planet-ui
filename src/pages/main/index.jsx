@@ -29,7 +29,7 @@ function Main() {
 
   const [ btnBg, setBtnBg ] = useState();
 
-  const [ mainRoute, setMainRoute ] = useState("")
+  // const [ mainRoute, setMainRoute ] = useState("")
 
   const [ isConnected, setIsConnected ] = useState(false);
 
