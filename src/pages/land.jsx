@@ -214,7 +214,7 @@ export function LinkIconGrop(props) {
   return (
     <Wrap align="center" justify="center">
       <WrapItem>
-          <ChakraLink href="https://discord.com/">
+          <ChakraLink href="https://discord.com/" isExternal>
             <Center h="100%" margin="15px">
               <FaDiscord
                 color="#cdcdcd"
