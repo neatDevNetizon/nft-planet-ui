@@ -1,6 +1,5 @@
 import { Box, 
 		 Image, 
-		 Center, 
 		 Link,
 		 HStack }    		from "@chakra-ui/react";
 import Txt     			   	from "./txt";
