@@ -213,33 +213,6 @@ export function LinkIconGrop(props) {
 
   return (
     <Wrap align="center" justify="center">
-{/*      <WrapItem>
-          <ChakraLink href="https://discord.com/">
-            <Image 
-              src="./images/discord.webp" 
-              margin="10px" 
-              h={linkIconHeight} 
-            />
-          </ChakraLink>
-      </WrapItem>
-      <WrapItem>
-          <ChakraLink href="https://twitter.com/">
-            <Image 
-              src="./images/twitter.webp" 
-              margin="10px" 
-              h={linkIconHeight} 
-            />
-          </ChakraLink>
-      </WrapItem>
-      <WrapItem>
-          <ChakraLink href="https://telegram.org/">
-            <Image 
-              src="./images/telegram.webp" 
-              margin="10px" 
-              h={linkIconHeight} 
-            />
-          </ChakraLink>
-      </WrapItem>*/}
       <WrapItem>
           <ChakraLink href="https://discord.com/">
             <Center h="100%" margin="15px">
