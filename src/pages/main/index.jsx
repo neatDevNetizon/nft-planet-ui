@@ -1,7 +1,5 @@
 import React                                 from 'react';
 import { useEffect, useState }               from "react";
-// import Popup                                 from 'reactjs-popup';
-// import { useMetamask }                       from "use-metamask";
 import { useMetaMask}                        from "metamask-react";
 import { Link }                              from "react-router-dom";
 import { IoIosArrowDropdownCircle }          from "react-icons/io";
@@ -21,51 +19,6 @@ import { LinkIconGrop }                      from "../land"
 import { SetIsConnected }                    from "../../utils/useIsConnected"
 
 function Main() {
-
-  // const ref = React.createRef();
-
-  // const { connect, metaState } = useMetamask();
-
-  // const connectMetaMask = () => {
-  //   if (!metaState.isAvailable)
-  //     alert("You don't have Metamask installed! https://metamask.io");
-  //   else if (!metaState.isConnected) {
-  //     (async () => {
-  //       try {
-  //           await connect(ethers.providers.Web3Provider, "any");
-  //       } catch (error) {
-  //         console.log(error);
-  //       }
-  //     })();
-  //   }
-  //   else if (metaState.chain.id!==supportedChainId)
-  //     alert("Wrong chain selected! Please select Rinkeby network");
-  // }
-
-  // useEffect(() => {
-  //   if (metaState.isAvailable && !metaState.isConnected && metaState.chain.id===supportedChainId) {
-  //     (async () => {
-  //       try {
-  //           await connect(ethers.providers.Web3Provider, "any");
-  //       } catch (error) {
-  //         console.log(error);
-  //       }
-  //     })();
-  //   }
-
-  //   if (metaState.isAvailable && metaState.isConnected && metaState.chain.id===supportedChainId) {
-  //     setBtnTitle(String(metaState.account[0]).substr(0, 7)+ "..."+ String(metaState.account[0]).substr(-7));
-  //     setBtnBg("rgba(0, 255, 0, 0.6)");
-  //   } else {     
-  //     if (!metaState.isAvailable) {
-  //       setBtnTitle("WALLET ERROR");
-  //       setBtnBg("rgba(255, 0, 0, 0.6)");
-  //     } else {
-  //       setBtnTitle("CONNECT WALLET");
-  //       setBtnBg("rgba(0, 0, 0, 0.6)");
-  //     }
-  //   }
-  // }, [metaState.isAvailable, metaState.isConnected, metaState.chain, metaState.account, connect, supportedChainId]);
 
   const supportedChainId = process.env.REACT_APP_CHAIN_ID;
 

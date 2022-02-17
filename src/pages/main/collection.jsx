@@ -1,11 +1,10 @@
-import { Center, 
-         Box }                from '@chakra-ui/react';
+import { Center, Box }        from '@chakra-ui/react';
 import React                  from 'react';
-// import { CgClose }            from "react-icons/cg";
 import Txt                    from '../../components/txt';
 import Nfts                   from '../../components/nfts';
-// import { closeIconSize }      from "../../components/componentSize";
 import { WalletOfOwner }      from '../../utils/useContract';
+// import { CgClose }            from "react-icons/cg";
+// import { closeIconSize }      from "../../components/componentSize";
 
 export default function Collection(props) {
 

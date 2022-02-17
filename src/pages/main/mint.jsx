@@ -1,8 +1,7 @@
-import { Center, 
-         Box }                     from '@chakra-ui/react';
+import { Center, Box }             from '@chakra-ui/react';
+import Txt                         from '../../components/txt';
+import Emperors                    from '../../components/emperors';
 // import { CgClose }                        from "react-icons/cg";
-import Txt                                from '../../components/txt';
-import Emperors                           from '../../components/emperors';
 // import { closeIconSize }                  from "../../components/componentSize";
 
 export default function Mint(props) {
