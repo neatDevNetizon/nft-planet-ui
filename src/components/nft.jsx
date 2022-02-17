@@ -1,7 +1,5 @@
 import { Box, 
 		 Image, 
-		 Wrap, 
-		 WrapItem, 
 		 Center, 
 		 Link,
 		 HStack }    		from "@chakra-ui/react";
