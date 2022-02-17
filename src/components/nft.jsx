@@ -4,7 +4,6 @@ import { Box,
 		 HStack }    		from "@chakra-ui/react";
 import Txt     			   	from "./txt";
 import { nftBoxWidth,
-		 nftImgSize,
 		 borderRadius,
 		 btnIconSize,
 		 btnIconPadding }   from "./componentSize";
