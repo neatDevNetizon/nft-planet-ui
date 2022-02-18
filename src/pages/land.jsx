@@ -70,6 +70,7 @@ function Land() {
         />
         <Box 
           // position='relative' 
+          zIndex="1"
           marginTop={{base:"-1150px!important", sm:"-950px!important", md:"-450px!important", lg:"-550px!important", xl:"-750px!important"}}
           align="center"
         >
