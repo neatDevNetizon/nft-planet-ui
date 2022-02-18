@@ -67,10 +67,10 @@ function Land() {
             opacity="0.07"
             height={{base:"1200px", sm:"1000px", md:"500px", lg:"600px", xl:"800px"}}
             width="100%"
-          />
+        />
         <Box 
-          position='relative' 
-          top={{base:"-1150px", sm:"-950px", md:"-450px", lg:"-550px", xl:"-750px"}}
+          // position='relative' 
+          marginTop={{base:"-1150px!important", sm:"-950px!important", md:"-450px!important", lg:"-550px!important", xl:"-750px!important"}}
           align="center"
         >
           <Box paddingTop="15px">
