@@ -13,6 +13,7 @@ export default function Mint(props) {
               w="100%" 
               h="20%"
               align="center"
+              paddingTop={{base:"10px", md:"20px", xl:"30px"}}
             >
               <Center w="90%" h="100%">
                 <Txt fontSize={{base:"16px", sm:"25px", lg:"30px", xl:"35px", "2xl":"40px"}}
@@ -24,6 +25,7 @@ export default function Mint(props) {
             <Box
               w={{base:"60%", md:"100%"}}
               h="80%"
+              paddingTop={{base:"10px", md:"40px", xl:"60px"}}
               paddingBottom="200px"
             >
                   <Emperors isMint={true} spacing={{base:"40px", md:"20px", lg:"40px", xl:"50px", "2xl":"60px"}}/>
