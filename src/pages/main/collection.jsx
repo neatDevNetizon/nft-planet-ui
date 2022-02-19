@@ -6,7 +6,7 @@ import Txt                    from '../../components/txt';
 import Nfts                   from '../../components/nfts';
 import { WalletOfOwner }      from '../../utils/useContract';
 
-export default function Collection(props) {
+export default function Collection(props, ref) {
 
   const [wallet, setWallet] = React.useState([]);
 

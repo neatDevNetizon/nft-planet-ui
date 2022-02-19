@@ -101,7 +101,7 @@ function Main() {
   }, [status, isConnected, account, chainId, supportedChainId]);
 
   const ref = React.useRef();
-  
+
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   useOutsideClick({
@@ -213,10 +213,10 @@ function Main() {
       >
         {isModalOpen
           ? ((mainRoute === "mint")
-              ? <Mint />
+              ? <div ref={ref}><Mint /></div>
               : (mainRoute === "collection")
-                  ? <Collection />
-                  : <></>) 
+                  ? <div ref={ref}><Collection /></div>
+                  : <></>)
           : <></>
         }
       </Box >
