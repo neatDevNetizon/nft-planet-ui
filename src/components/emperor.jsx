@@ -3,7 +3,7 @@ import { FaArrowAltCircleRight }  from "react-icons/fa";
 import { Box, 
 		 Tooltip, 
 		 Center, 
-		 VStack }   			  from "@chakra-ui/react";
+		 VStack, Image }   			  from "@chakra-ui/react";
 import { Link }                   from "react-router-dom";
 import { Btn } 					  from "./btn"
 import Txt 						  from "./txt"
@@ -152,7 +152,7 @@ function mint(tier) {
 
 export default function Emperor(props) {
 
-	const img = <Img emperorTier={props.emperorTier} imSrc={props.imSrc} />
+	const img = <Image id={props.emperorTier} src={props.imSrc} />
 				
 	const alt = <EmpTxt emperorTier={props.emperorTier} />
 				
@@ -166,6 +166,7 @@ export default function Emperor(props) {
 				 closeOnClick={false}
 				 onOpen={() => setNftImg(alt)}
 				 onClose={() => setNftImg(img)}
+				 placement="bottom"
 		>
 			<Box bg="black"
 				 w={{base:"140px", sm:"150px", md:"160px", lg:"170px", xl:"180px",'2xl':"190px"}}

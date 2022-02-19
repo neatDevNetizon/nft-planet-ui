@@ -118,6 +118,7 @@ function Main() {
         h={{base:"60px", lg:"100px"}}
         align="center"
         marginTop={{base:"60px", lg:"0px"}}
+        zIndex="10000000"
       >
         <Box 
           pos="fixed" 
@@ -165,7 +166,7 @@ function Main() {
             </Box>
           </Center>
         </Box>
-        <Box>
+        <Box bg={{base:"#091516", sm:"transparent"}}>
           <Wrap 
             width="100%"
             align="center"
@@ -204,7 +205,7 @@ function Main() {
         </Box>
       </Box>
       <Box pos="fixed"
-        top={{base:"180px", md:"160px"}}
+        top={{base:"120px", md:"160px"}}
         bottom={{base:"80px", md:"100px"}}
         w="100%"
         align="center"
@@ -228,6 +229,7 @@ function Main() {
         h={{base:"60px", lg:"100px"}}
         align="center"
         bg={{base:"black", lg:"transparent"}}
+        zIndex="10000000"
       >
         <Center h="100%">
           <LinkIconGrop />

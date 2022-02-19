@@ -75,7 +75,7 @@ function Land() {
             />
           </Box>
           <Box padding={{base:"50px 40px", sm:"60px 200px", md:"70px 0px", xl:"100px 0px"}}>
-            <Emperors isMint={false} spacing="0px"/>
+            <Emperors isMint={false} spacing="40px"/>
           </Box>
           <Box paddingTop={{base:"50px", sm:"70px", md:"100px", lg:"150px", xl:"200px"}}>
             <Txt 
@@ -129,6 +129,7 @@ function Land() {
       <Box 
         pos="fixed" 
         top='0px'
+        zIndex="10000000"
         left="0px"
         width="100%"
         align="right"
