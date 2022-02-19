@@ -60,6 +60,7 @@ function Land() {
             opacity="0.07"
             height={{base:"1200px", sm:"1250px", md:"600px", lg:"700px", xl:"800px"}}
             width="100%"
+            align="center"
         />
         <Box 
           // position='relative' 
@@ -74,7 +75,7 @@ function Land() {
               text="CLAIM YOUR EMPERORS NOW"  
             />
           </Box>
-          <Box padding={{base:"50px 40px", sm:"60px 200px", md:"70px 0px", xl:"100px 0px"}}>
+          <Box padding={{base:"50px 40px", sm:"60px 200px", md:"70px 0px", xl:"100px 0px"}} align="center">
             <Emperors isMint={false} spacing={{base:"40px", md:"20px", lg:"40px", xl:"50px", "2xl":"60px"}}/>
           </Box>
           <Box paddingTop={{base:"100px", sm:"100px", md:"100px", lg:"150px", xl:"200px"}}>

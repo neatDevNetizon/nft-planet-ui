@@ -8,7 +8,7 @@ export default function Mint(props) {
 
     return (
       <Box w="100%" h="100%">
-          <VStack>
+          <VStack align="center" justify="center">
             <Box 
               w="100%" 
               h="20%"
@@ -27,6 +27,7 @@ export default function Mint(props) {
               h="80%"
               paddingTop={{base:"10px", md:"30px", lg:"40px", xl:"50px"}}
               paddingBottom={{base:"200px", md:"0px"}}
+              align="center"
             >
                   <Emperors isMint={true} spacing={{base:"40px", md:"20px", lg:"40px", xl:"50px", "2xl":"60px"}}/>
             </Box>
