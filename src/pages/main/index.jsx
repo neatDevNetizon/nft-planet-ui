@@ -100,8 +100,10 @@ function Main() {
     } 
   }, [status, isConnected, account, chainId, supportedChainId]);
 
-  const ref = React.useRef()
-  const [isModalOpen, setIsModalOpen] = React.useState(false)
+  const ref = React.useRef();
+  
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
   useOutsideClick({
     ref: ref,
     handler: () => setIsModalOpen(false),
