@@ -1,5 +1,5 @@
 import React        from 'react';
-import { Button }   from '@chakra-ui/react';
+import { Button, Center }   from '@chakra-ui/react';
 import Txt          from "./txt";
 
 export const Btn = React.forwardRef((props, ref) => {
