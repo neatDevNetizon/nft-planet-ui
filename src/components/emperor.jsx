@@ -159,21 +159,23 @@ export default function Emperor(props) {
 	const [nftImg, setNftImg] = useState(img);
 
 	return(
-		<Tooltip label={<Tip pixel={props.pixel} price={props.price} />} 
-				 w={{base:"140px", sm:"150px", md:"160px", lg:"170px", xl:"180px",'2xl':"190px"}}
-				 borderRadius={{base:"10px", lg:"15px", xl:"20px"}}
-				 // bg="#171923"
-				 bg="black"
-				 closeOnClick={false}
-				 onOpen={() => setNftImg(alt)}
-				 onClose={() => setNftImg(img)}
-				 placement="bottom"
+		<Tooltip 
+				label={<Tip pixel={props.pixel} price={props.price} />} 
+				w={{base:"140px", sm:"150px", md:"160px", lg:"170px", xl:"180px",'2xl':"190px"}}
+				borderRadius={{base:"10px", lg:"15px", xl:"20px"}}
+				// bg="#171923"
+				bg="black"
+				closeOnClick={false}
+				onOpen={() => setNftImg(alt)}
+				onClose={() => setNftImg(img)}
+				placement="bottom"
 		>
-			<Box bg="black"
-				 w={{base:"140px", sm:"150px", md:"160px", lg:"170px", xl:"180px",'2xl':"190px"}}
-				 borderRadius={{base:"10px", lg:"15px", xl:"20px"}}
-				 margin={{base:"30px", sm:"35px", md:"40px", lg:"45px"}}
-				 align="center"
+			<Box 
+				bg="black"
+				w={{base:"140px", sm:"150px", md:"160px", lg:"170px", xl:"180px",'2xl':"190px"}}
+				borderRadius={{base:"10px", lg:"15px", xl:"20px"}}
+				margin={{base:"30px", sm:"35px", md:"40px", lg:"45px"}}
+				align="center"
 			>
 				<Box padding={{base:"10px", sm:"11px", md:"13px", lg:"14px", xl:"16px",'2xl':"18px"}}>
 					<Box h={{base:"130px", sm:"135px", md:"145px", lg:"150px", xl:"155px",'2xl':"160px"}}>
