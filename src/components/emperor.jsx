@@ -182,7 +182,7 @@ export default function Emperor(props) {
 		// 		placement="bottom"
 		// >
 		// </Tooltip>
-		<VStack >
+		<VStack justify="center" align="center">
 			<Box 
 				bg="black"
 				w={{base:"140px", sm:"150px", md:"160px", lg:"170px", xl:"180px",'2xl':"190px"}}

@@ -26,7 +26,7 @@ export default function Mint(props) {
               w={{base:"60%", md:"100%"}}
               h="80%"
               paddingTop={{base:"10px", md:"40px", xl:"60px"}}
-              paddingBottom="200px"
+              paddingBottom={{base:"200px", md:"0px"}}
             >
                   <Emperors isMint={true} spacing={{base:"40px", md:"20px", lg:"40px", xl:"50px", "2xl":"60px"}}/>
             </Box>
