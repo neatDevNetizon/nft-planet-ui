@@ -162,7 +162,8 @@ export default function Emperor(props) {
 		<Tooltip label={<Tip pixel={props.pixel} price={props.price} />} 
 				 w={{base:"140px", sm:"150px", md:"160px", lg:"170px", xl:"180px",'2xl':"190px"}}
 				 borderRadius={{base:"10px", lg:"15px", xl:"20px"}}
-				 bg="#171923"
+				 // bg="#171923"
+				 bg="black"
 				 closeOnClick={false}
 				 onOpen={() => setNftImg(alt)}
 				 onClose={() => setNftImg(img)}
