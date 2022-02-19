@@ -18,7 +18,6 @@ import Emperors                       from "../components/emperors";
 import { Btn }                        from "../components/btn";
 import Txt                            from "../components/txt";
 import { descriptionIconSize,
-         linkIconHeight,
          btnIconSize}                from "../components/componentSize";
 
 
@@ -26,7 +25,6 @@ function Land() {
 
   return (
     <>
-
       <VStack
         spacing={1}
         align='stretch'
@@ -211,6 +209,9 @@ function InfoDescription(props) {
 
 
 export function LinkIconGrop(props) {
+
+  const linkIconHeight = "30px";
+
 
   return (
     <Wrap align="center" justify="center">

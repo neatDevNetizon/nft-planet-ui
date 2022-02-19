@@ -10,8 +10,8 @@ import { Image,
          Wrap, 
          WrapItem, 
          Center, 
-         HStack }                            from "@chakra-ui/react";
-// import { Popup }                             from "reactjs-popup";
+         HStack,
+         useOutsideClick }                   from "@chakra-ui/react";
 import { Btn }                               from "../../components/btn";
 import Mint                                  from "./mint";
 import Collection                            from "./collection";
@@ -100,6 +100,12 @@ function Main() {
     } 
   }, [status, isConnected, account, chainId, supportedChainId]);
 
+  const ref = React.useRef()
+  const [isModalOpen, setIsModalOpen] = React.useState(false)
+  useOutsideClick({
+    ref: ref,
+    handler: () => setIsModalOpen(false),
+  })
 
   return (
     <Box>
@@ -167,89 +173,34 @@ function Main() {
             <WrapItem>
               <Box 
                 height={{base:"60px", lg:"100px"}} 
-                padding={{base:"0px 10px", md:"0px 15px", lg:"0px 30px", xl:"0px 50px", '2xl':"0px 110px"}}
+                padding={{base:"0px 10px", md:"0px 15px", lg:"0px 15px", xl:"0px 50px", '2xl':"0px 110px"}}
               >
                 <Center h="100%">
                   <Btn 
                     text=" MINT "
-                    onClick={() => setMainRoute("mint")}
+                    onClick={() => { setMainRoute("mint"); setIsModalOpen(true) }}
                     rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
                   />
-                  {/*<Popup 
-                    modal 
-                    trigger={
-                      <Btn 
-                        text=" MINT " 
-                        rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
-                        // ref={ref}
-                      />
-                    }
-                  >
-                    {close => 
-                      <Box 
-                        width={{base:"90vw", lg:"85vw", xl:"80vw", '2xl':"75vw"}} 
-                        height="70vh"
-                        marginTop="100px 0px"
-                      >
-                          <Mint close={close} />
-                      </Box>
-                    }
-                  </Popup>*/}
                 </Center>
               </Box>
             </WrapItem>
             <WrapItem>
               <Box 
                 height={{base:"60px", lg:"100px"}} 
-                padding={{base:"0px", md:"0px 15px", lg:"0px 30px", xl:"0px 50px", '2xl':"0px 110px"}}
+                padding={{base:"0px", md:"0px 15px", lg:"0px 15px", xl:"0px 50px", '2xl':"0px 110px"}}
               >
                 <Center h="100%">
                   <Btn
-                    onClick={() => setMainRoute("collection")}
+                    onClick={() => { setMainRoute("collection"); setIsModalOpen(true) }}
                     text=" YOUR COLLECTION " 
                     rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
                   />
-                  {/*<Popup 
-                    modal 
-                    trigger={
-                      <Btn 
-                        text=" YOUR COLLECTION " 
-                        rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
-                        // ref={ref}
-                      />
-                    }
-                  >
-                    {close => 
-                      <Box 
-                        width={{base:"90vw", lg:"85vw", xl:"80vw", '2xl':"75vw"}} 
-                        height="70vh"
-                      >
-                        <Collection close={close} />
-                      </Box>
-                    }
-                  </Popup>*/}
                 </Center>
               </Box>
             </WrapItem>
           </Wrap>
         </Box>
       </Box>
-
-{/*      <Box
-        align="center"
-        marginTop={{base:"120px", md:"100px"}}
-        marginBottom={{base:"60px", md:"100px"}}
-        width="100%"
-        height={{base:window.innerHeight-180, md:window.innerHeight-200}}
-      >
-        {
-          (mainRoute === "mint")
-            ? <Mint />
-            : (mainRoute === "collection")
-                ? <Collection />
-                : <></>
-        }
-      </Box>*/}
       <Box pos="fixed"
         top={{base:"180px", md:"160px"}}
         bottom={{base:"80px", md:"100px"}}
@@ -258,12 +209,13 @@ function Main() {
         overflowY="scroll"
         overflowX="hidden"
       >
-        {
-          (mainRoute === "mint")
-            ? <Mint />
-            : (mainRoute === "collection")
-                ? <Collection />
-                : <></>
+        {isModalOpen
+          ? ((mainRoute === "mint")
+              ? <Mint />
+              : (mainRoute === "collection")
+                  ? <Collection />
+                  : <></>) 
+          : <></>
         }
       </Box >
 

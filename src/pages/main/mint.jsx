@@ -14,7 +14,7 @@ export default function Mint(props) {
               h="20%"
               align="center"
             >
-              <Center h="100%">
+              <Center w="90%" h="100%">
                 <Txt fontSize={{base:"16px", sm:"25px", lg:"30px", xl:"35px", "2xl":"40px"}}
                      opacity="0.5" 
                      text="CHOOSE YOUR EMPEROR TO MINT"
