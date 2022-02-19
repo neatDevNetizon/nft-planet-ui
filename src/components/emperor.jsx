@@ -93,6 +93,8 @@ function Img(props) {
 				 role="presentation" 
 				 aria-hidden="true" 
 				 aria-labelledby="svgcid-g1w5e1-y4huld"
+				 // w={{base:"130px", sm:"135px", md:"145px", lg:"150px", xl:"155px",'2xl':"160px"}}
+				 // h={{base:"130px", sm:"135px", md:"145px", lg:"150px", xl:"155px",'2xl':"160px"}}
 			>
 				<defs>
 					<pattern
