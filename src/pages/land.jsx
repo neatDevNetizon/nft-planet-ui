@@ -31,7 +31,7 @@ function Land() {
         spacing={1}
         align='stretch'
         overflow="hidden"
-        marginTop={{base:"60px", md:"0px"}}
+        marginTop={{base:"60px", lg:"0px"}}
       >
         <VStack
           spacing={10}
@@ -65,13 +65,13 @@ function Land() {
             bgPosition="center"
             bgSize="cover"
             opacity="0.07"
-            height={{base:"1200px", sm:"1000px", md:"500px", lg:"600px", xl:"800px"}}
+            height={{base:"1050px", sm:"1150px", md:"600px", lg:"700px", xl:"800px"}}
             width="100%"
         />
         <Box 
           // position='relative' 
-          zIndex="1"
-          marginTop={{base:"-1150px!important", sm:"-950px!important", md:"-450px!important", lg:"-550px!important", xl:"-750px!important"}}
+          zIndex="0"
+          marginTop={{base:"-1000px!important", sm:"-1100px!important", md:"-550px!important", lg:"-650px!important", xl:"-750px!important"}}
           align="center"
         >
           <Box paddingTop="15px">
@@ -81,13 +81,13 @@ function Land() {
               text="CLAIM YOUR EMPERORS NOW"  
             />
           </Box>
-          <Box paddingTop={{base:"50px", xl:"100px"}}>
-            <Emperors isMint={false} spacing={{base:"150px", lg:"80px", xl:"120px"}}/>
+          <Box padding={{base:"50px 40px", sm:"60px 200px", md:"70px 0px", xl:"100px 0px"}}>
+            <Emperors isMint={false} spacing="0px"/>
           </Box>
-          <Box paddingTop={{base:"500px", sm:"500px", md:"500px", lg:"400px", xl:"500px"}}>
+          <Box paddingTop={{base:"50px", sm:"70px", md:"100px", lg:"150px", xl:"200px"}}>
             <Txt 
               text="HOW IT WORKS"
-              fontSize={{base:"20px", lg:"35px", xl:"40px"}}
+              fontSize={{base:"20px", sm:"25",md:"30", lg:"34px", xl:"37px","2xl":"40px"}}
             />
           </Box>
           <Box paddingTop="30px">
@@ -139,8 +139,8 @@ function Land() {
         left="0px"
         width="100%"
         align="right"
-        bg={{base:"black", md:"transparent"}}
-        height={{base:"60px", md:"100px"}}
+        bg={{base:"black", lg:"transparent"}}
+        h={{base:"60px", lg:"100px"}}
       >
         <Center h="100%">
         <Box width="95%" align="right">
@@ -216,7 +216,7 @@ export function LinkIconGrop(props) {
     <Wrap align="center" justify="center">
       <WrapItem>
           <ChakraLink href="https://discord.com/" isExternal>
-            <Center h="100%" margin="15px">
+            <Center h="100%" margin="12px">
               <FaDiscord
                 color="#cdcdcd"
                 size={linkIconHeight}
@@ -226,7 +226,7 @@ export function LinkIconGrop(props) {
       </WrapItem>
       <WrapItem>
           <ChakraLink href="https://twitter.com/" isExternal>
-            <Center h="100%" margin="15px">
+            <Center h="100%" margin="12px">
               <FaTwitter
                 color="#cdcdcd"
                 size={linkIconHeight}
@@ -236,7 +236,7 @@ export function LinkIconGrop(props) {
       </WrapItem>
       <WrapItem>
           <ChakraLink href="https://telegram.org/" isExternal>
-            <Center h="100%" margin="15px">
+            <Center h="100%" margin="12px">
               <FaTelegramPlane
                 color="#cdcdcd"
                 size={linkIconHeight}
@@ -246,7 +246,7 @@ export function LinkIconGrop(props) {
       </WrapItem>
       <WrapItem>
           <ChakraLink href="https://www.gitbook.com/" isExternal>
-            <Center h="100%" margin="15px">
+            <Center h="100%" margin="12px">
               <SiGitbook 
                 color="#cdcdcd"
                 size={linkIconHeight}

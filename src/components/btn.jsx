@@ -13,7 +13,7 @@ export const Btn = React.forwardRef((props, ref) => {
             borderRadius={props.borderRadius? props.borderRadius : {base:"10px", lg:"15px", xl:"20px"}}
             onClick={props.onClick}
             rightIcon={props.rightIcon ? props.rightIcon : ''}
-            padding={props.padding? props.padding : '10px'}
+            padding={props.padding? props.padding : '15px'}
             ref={ref}
         ><Txt  
             text={props.text} 

@@ -11,7 +11,7 @@ import { Image,
          WrapItem, 
          Center, 
          HStack }                            from "@chakra-ui/react";
-import { Popup }                             from "reactjs-popup";
+// import { Popup }                             from "reactjs-popup";
 import { Btn }                               from "../../components/btn";
 import Mint                                  from "./mint";
 import Collection                            from "./collection";
@@ -29,7 +29,7 @@ function Main() {
 
   const [ btnBg, setBtnBg ] = useState();
 
-  // const [ mainRoute, setMainRoute ] = useState("")
+  const [ mainRoute, setMainRoute ] = useState("")
 
   const [ isConnected, setIsConnected ] = useState(false);
 
@@ -102,22 +102,22 @@ function Main() {
 
 
   return (
-    <Box minHeight={window.innerHeight} overflow="hidden">
+    <Box>
       <Box 
         pos="fixed" 
         top="0px"
         w="100%" 
-        h={{base:"60px", md:"100px"}}
+        h={{base:"60px", lg:"100px"}}
         align="center"
-        marginTop={{base:"60px", md:"0px"}}
+        marginTop={{base:"60px", lg:"0px"}}
       >
         <Box 
           pos="fixed" 
           top='0px'
           w="100%"
-          h={{base:"60px", md:"100px"}}
+          h={{base:"60px", lg:"100px"}}
           align="center"
-          bg={{base:"black", md:"transparent"}}
+          bg={{base:"black", lg:"transparent"}}
         >
           <Center h="100%" w="100%" paddingLeft="5%" paddingRight="5%">
             <Box width="40%" align="left">
@@ -157,8 +157,8 @@ function Main() {
             </Box>
           </Center>
         </Box>
-
-        <Wrap 
+        <Box>
+          <Wrap 
             width="100%"
             align="center"
             justify="center"
@@ -166,16 +166,16 @@ function Main() {
           >
             <WrapItem>
               <Box 
-                height={{base:"60px", md:"100px"}} 
+                height={{base:"60px", lg:"100px"}} 
                 padding={{base:"0px 10px", md:"0px 15px", lg:"0px 30px", xl:"0px 50px", '2xl':"0px 110px"}}
               >
                 <Center h="100%">
-{/*                  <Btn 
+                  <Btn 
                     text=" MINT "
                     onClick={() => setMainRoute("mint")}
                     rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
-                  />*/}
-                  <Popup 
+                  />
+                  {/*<Popup 
                     modal 
                     trigger={
                       <Btn 
@@ -185,23 +185,31 @@ function Main() {
                       />
                     }
                   >
-                    {close => <Box width={{base:window.innerWidth*0.9, sm:window.innerWidth*0.6}} height={window.innerHeight*0.7}><Mint close={close} /></Box>}
-                  </Popup>
+                    {close => 
+                      <Box 
+                        width={{base:"90vw", lg:"85vw", xl:"80vw", '2xl':"75vw"}} 
+                        height="70vh"
+                        marginTop="100px 0px"
+                      >
+                          <Mint close={close} />
+                      </Box>
+                    }
+                  </Popup>*/}
                 </Center>
               </Box>
             </WrapItem>
             <WrapItem>
               <Box 
-                height={{base:"60px", md:"100px"}} 
+                height={{base:"60px", lg:"100px"}} 
                 padding={{base:"0px", md:"0px 15px", lg:"0px 30px", xl:"0px 50px", '2xl':"0px 110px"}}
               >
                 <Center h="100%">
-{/*                  <Btn
+                  <Btn
                     onClick={() => setMainRoute("collection")}
                     text=" YOUR COLLECTION " 
                     rightIcon={<IoIosArrowDropdownCircle fill="#FFFFFF" size={btnIconSize}/>}
-                  />*/}
-                  <Popup 
+                  />
+                  {/*<Popup 
                     modal 
                     trigger={
                       <Btn 
@@ -211,12 +219,20 @@ function Main() {
                       />
                     }
                   >
-                    {close => <Box width={{base:window.innerWidth*0.9, sm:window.innerWidth*0.75}} height={window.innerHeight*0.7}><Collection close={close} /></Box>}
-                  </Popup>
+                    {close => 
+                      <Box 
+                        width={{base:"90vw", lg:"85vw", xl:"80vw", '2xl':"75vw"}} 
+                        height="70vh"
+                      >
+                        <Collection close={close} />
+                      </Box>
+                    }
+                  </Popup>*/}
                 </Center>
               </Box>
             </WrapItem>
           </Wrap>
+        </Box>
       </Box>
 
 {/*      <Box
@@ -234,14 +250,30 @@ function Main() {
                 : <></>
         }
       </Box>*/}
+      <Box pos="fixed"
+        top={{base:"180px", md:"160px"}}
+        bottom={{base:"80px", md:"100px"}}
+        w="100%"
+        align="center"
+        overflowY="scroll"
+        overflowX="hidden"
+      >
+        {
+          (mainRoute === "mint")
+            ? <Mint />
+            : (mainRoute === "collection")
+                ? <Collection />
+                : <></>
+        }
+      </Box >
 
       <Box
         pos="fixed"
         bottom="0px"
         w="100%"
-        h={{base:"60px", md:"100px"}}
+        h={{base:"60px", lg:"100px"}}
         align="center"
-        bg={{base:"black", md:"transparent"}}
+        bg={{base:"black", lg:"transparent"}}
       >
         <Center h="100%">
           <LinkIconGrop />

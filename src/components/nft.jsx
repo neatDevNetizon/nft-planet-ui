@@ -3,9 +3,7 @@ import { Box,
 		 Link,
 		 HStack }    		from "@chakra-ui/react";
 import Txt     			   	from "./txt";
-import { nftBoxWidth,
-		 borderRadius,
-		 btnIconSize }      from "./componentSize";
+import { btnIconSize }      from "./componentSize";
 
 function Nft(props) {
 
@@ -17,12 +15,12 @@ function Nft(props) {
 
 	return(
 		<Box bg="black"
-			 width={nftBoxWidth}
-			 borderRadius={borderRadius}
+			 width={{base:"160px", sm:"170px", md:"180px", lg:"190px", xl:"200px", "2xl":"215px"}}
+			 borderRadius={{base:"10px", lg:"15px", xl:"20px"}}
 			 align="center"
 		>
 			<Box padding="10%" align="center">
-				<Image src={imSrc} borderRadius={borderRadius} />
+				<Image src={imSrc} borderRadius={{base:"10px", lg:"15px", xl:"20px"}} />
 			</Box>
 			<Box padding="0% 10% 10% 10%" align="center">
 				<Link 
@@ -32,7 +30,7 @@ function Nft(props) {
 				>
 					<Box 
 						border='3px solid #FFFFFF'
-						borderRadius={{base:"5px", lg:"10px", xl:"15px"}}
+						borderRadius={{base:"10px", lg:"15px", xl:"20px"}}
 						padding={{base:"2px", lg:"5px", xl:"10px"}}
 						align="center"
 						_hover={{ bg: '#ebedf0' }}

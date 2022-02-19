@@ -12,8 +12,12 @@ function Nfts(props) {
   const items = getItems(tokenIds);
 
   return (
-    <Box w="100%" align="center">
-        <Wrap spacing='20px' align="center" justify="center">
+    <Box w={{base:"90%", lg:"80%"}} align="center" paddingTop="20px">
+        <Wrap 
+            spacing={{base:"50px", sm:"60px", md:"70px", lg:"80px", xl:"60px", "2xl":"80px"}} 
+            align="center" 
+            justify="center"
+        >
             {items.map(({ id }) => (
                 <WrapItem key={id}>
                     <Nft tokenId={Number(tokenIds[id])} />
