@@ -15,10 +15,13 @@ export const Btn = React.forwardRef((props, ref) => {
             rightIcon={props.rightIcon ? props.rightIcon : ''}
             padding={props.padding? props.padding : '15px'}
             ref={ref}
-        ><Txt  
-            text={props.text} 
-            fontSize={props.textSize? props.textSize : {base:"14px", lg:"17px", xl:"20px"}}
-         />
+        >
+            <Center h="100%">
+                <Txt  
+                    text={props.text} 
+                    fontSize={props.textSize? props.textSize : {base:"14px", lg:"17px", xl:"20px"}}
+                />
+            </Center>
         </Button>
     )
 });

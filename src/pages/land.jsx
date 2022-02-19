@@ -211,28 +211,28 @@ export function LinkIconGrop(props) {
     <Wrap align="center" justify="center">
       <WrapItem>
           <ChakraLink href="https://discord.com/" isExternal>
-            <Center h="100%" margin={{base:"5px", sm:"10px", md:"15px", lg:"20px", xl:"25px"}}>
+            <Center h="100%" margin={{base:"8px", sm:"10px", md:"15px", lg:"20px", xl:"25px"}}>
               <Image src="./images/icons/discord.webp" color="#cdcdcd" h={linkIconHeight}/>
             </Center>
           </ChakraLink>
       </WrapItem>
       <WrapItem>
           <ChakraLink href="https://twitter.com/" isExternal>
-            <Center h="100%" margin={{base:"5px", sm:"10px", md:"15px", lg:"20px", xl:"25px"}}>
+            <Center h="100%" margin={{base:"8px", sm:"10px", md:"15px", lg:"20px", xl:"25px"}}>
               <Image src="./images/icons/twitter.webp" color="#cdcdcd" h={linkIconHeight}/>
             </Center>
           </ChakraLink>
       </WrapItem>
       <WrapItem>
           <ChakraLink href="https://telegram.org/" isExternal>
-            <Center h="100%" margin={{base:"5px", sm:"10px", md:"15px", lg:"20px", xl:"25px"}}>
+            <Center h="100%" margin={{base:"8px", sm:"10px", md:"15px", lg:"20px", xl:"25px"}}>
               <Image src="./images/icons/telegram.webp" color="#cdcdcd" h={linkIconHeight}/>
             </Center>
           </ChakraLink>
       </WrapItem>
       <WrapItem>
           <ChakraLink href="https://www.gitbook.com/" isExternal>
-            <Center h="100%" margin={{base:"5px", sm:"10px", md:"15px", lg:"20px", xl:"25px"}}>
+            <Center h="100%" margin={{base:"8px", sm:"10px", md:"15px", lg:"20px", xl:"25px"}}>
                 <Image src="./images/icons/gitbook.svg" h={linkIconHeight}/>
             </Center>
           </ChakraLink>

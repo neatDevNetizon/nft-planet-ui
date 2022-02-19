@@ -11,7 +11,7 @@ function Nft(props) {
 
 	const imSrc = imgBaseURI + props.tokenId + ".png";
 
-	const fontFamily = "arial,ｍｓ ｐゴシック,ms pgothic,돋움,dotum,helvetica,sans-serif";
+	// const fontFamily = "arial,ｍｓ ｐゴシック,ms pgothic,돋움,dotum,helvetica,sans-serif";
 
 	return(
 		<Box bg="black"
@@ -44,11 +44,16 @@ function Nft(props) {
 						}}
 					>
   						<HStack spacing='5px' align="center" justify="center">
-	  						<Image src="images/icons/Logomark-Blue.webp" h={btnIconSize}/>
-	  						<Txt fontFamily={fontFamily}
+	  						<Image 
+	  							src="images/icons/Logomark-Blue.webp" 
+	  							h={{base:"20px", sm:"22px", md:"24px", lg:"26px", xl:"28px", "2xl":"30px"}}
+	  						/>
+	  						<Txt 
+	  							fontFamily='arial black,arial-w01-black,arial-w02-black,arial-w10 black,sans-serif'
 							 	text="SELL"
 							 	align="left"
-							 	margin="0px 5px"
+							 	paddingLeft="15px"
+							 	fontSize={{base:"17px", lg:"20px", xl:"25px"}}
 							/>
 						</HStack>
 					</Box>
