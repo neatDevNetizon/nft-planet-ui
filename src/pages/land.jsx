@@ -58,13 +58,13 @@ function Land() {
             bgPosition="center"
             bgSize="cover"
             opacity="0.07"
-            height={{base:"1050px", sm:"1150px", md:"600px", lg:"700px", xl:"800px"}}
+            height={{base:"1200px", sm:"1250px", md:"600px", lg:"700px", xl:"800px"}}
             width="100%"
         />
         <Box 
           // position='relative' 
           zIndex="0"
-          marginTop={{base:"-1000px!important", sm:"-1100px!important", md:"-550px!important", lg:"-650px!important", xl:"-750px!important"}}
+          marginTop={{base:"-1150px!important", sm:"-1200px!important", md:"-550px!important", lg:"-650px!important", xl:"-750px!important"}}
           align="center"
         >
           <Box paddingTop="15px">
@@ -75,9 +75,9 @@ function Land() {
             />
           </Box>
           <Box padding={{base:"50px 40px", sm:"60px 200px", md:"70px 0px", xl:"100px 0px"}}>
-            <Emperors isMint={false} spacing="40px"/>
+            <Emperors isMint={false} spacing={{base:"40px", md:"20px", lg:"40px", xl:"50px", "2xl":"60px"}}/>
           </Box>
-          <Box paddingTop={{base:"50px", sm:"70px", md:"100px", lg:"150px", xl:"200px"}}>
+          <Box paddingTop={{base:"100px", sm:"100px", md:"100px", lg:"150px", xl:"200px"}}>
             <Txt 
               text="HOW IT WORKS"
               fontSize={{base:"20px", sm:"25",md:"30", lg:"34px", xl:"37px","2xl":"40px"}}

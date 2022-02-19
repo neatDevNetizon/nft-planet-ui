@@ -3,7 +3,6 @@ import { Box,
 		 Link,
 		 HStack }    		from "@chakra-ui/react";
 import Txt     			   	from "./txt";
-import { btnIconSize }      from "./componentSize";
 
 function Nft(props) {
 

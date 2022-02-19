@@ -204,10 +204,18 @@ function Main() {
           </Wrap>
         </Box>
       </Box>
-      <Box pos="fixed"
+      <Box 
+        pos="fixed"
         top={{base:"120px", md:"160px"}}
         bottom={{base:"80px", md:"100px"}}
         w="100%"
+        align="center"
+        overflowY="hidden"
+        overflowX="hidden"
+      >
+      <Box
+        w={{base:"100%", sm:"104%", md:"103%", lg:"102%", "2xl":"101%"}}
+        h="100%"
         align="center"
         overflowY="scroll"
         overflowX="hidden"
@@ -221,6 +229,7 @@ function Main() {
           : <></>
         }
       </Box >
+      </Box>
 
       <Box
         pos="fixed"

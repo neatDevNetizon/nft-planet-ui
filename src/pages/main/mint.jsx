@@ -22,10 +22,10 @@ export default function Mint(props) {
               </Center>
             </Box>
             <Box
-              w="100%"
+              w={{base:"60%", md:"100%"}}
               h="80%"
             >
-                  <Emperors isMint={true} spacing={{base:"50px", md:"30px", lg:"40px", xl:"50px", "2xl":"60px"}}/>
+                  <Emperors isMint={true} spacing={{base:"40px", md:"20px", lg:"40px", xl:"50px", "2xl":"60px"}}/>
             </Box>
         </VStack>
       </Box>
