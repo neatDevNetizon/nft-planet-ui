@@ -182,12 +182,12 @@ export default function Emperor(props) {
 		// 		placement="bottom"
 		// >
 		// </Tooltip>
-		<VStack justify="center" align="center">
+		<VStack justify="center" align="center" padding={{base:"0px 30px", sm:"0px 35px", md:"0px 40px", lg:"0px 45px"}}>
 			<Box 
 				bg="black"
 				w={{base:"140px", sm:"150px", md:"160px", lg:"170px", xl:"180px",'2xl':"190px"}}
 				borderRadius={{base:"10px", lg:"15px", xl:"20px"}}
-				margin={{base:"0px 30px", sm:"0px 35px", md:"0px 40px", lg:"0px 45px"}}			
+				margin="0px"		
 				align="center"
 				onMouseEnter = {() => enterHoverHandler()}
 				onMouseLeave = {() => leaveHoverHandler()}
