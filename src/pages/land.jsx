@@ -10,16 +10,11 @@ import { BsShare }                    from "react-icons/bs";
 import { IoDocumentOutline }          from "react-icons/io5";
 import { FiThumbsUp }                 from "react-icons/fi";
 import { FaArrowAltCircleDown }       from "react-icons/fa";
-import { SiGitbook }                  from "react-icons/si"
-import { FaDiscord, 
-         FaTelegramPlane, 
-         FaTwitter }                  from "react-icons/fa"
 import Emperors                       from "../components/emperors";
 import { Btn }                        from "../components/btn";
 import Txt                            from "../components/txt";
 import { descriptionIconSize,
-         btnIconSize}                from "../components/componentSize";
-
+         btnIconSize}                 from "../components/componentSize";
 
 function Land() {
 
@@ -210,48 +205,35 @@ function InfoDescription(props) {
 
 export function LinkIconGrop(props) {
 
-  const linkIconHeight = "30px";
-
+  const linkIconHeight = {base:"25px", md:"30px", lg:"35px", xl:"40px", "2xl":"45px"};
 
   return (
     <Wrap align="center" justify="center">
       <WrapItem>
           <ChakraLink href="https://discord.com/" isExternal>
             <Center h="100%" margin="12px">
-              <FaDiscord
-                color="#cdcdcd"
-                size={linkIconHeight}
-              />
+              <Image src="./images/icons/discord.webp" color="#cdcdcd" h={linkIconHeight}/>
             </Center>
           </ChakraLink>
       </WrapItem>
       <WrapItem>
           <ChakraLink href="https://twitter.com/" isExternal>
             <Center h="100%" margin="12px">
-              <FaTwitter
-                color="#cdcdcd"
-                size={linkIconHeight}
-              />
+              <Image src="./images/icons/twitter.webp" color="#cdcdcd" h={linkIconHeight}/>
             </Center>
           </ChakraLink>
       </WrapItem>
       <WrapItem>
           <ChakraLink href="https://telegram.org/" isExternal>
             <Center h="100%" margin="12px">
-              <FaTelegramPlane
-                color="#cdcdcd"
-                size={linkIconHeight}
-              />
+              <Image src="./images/icons/telegram.webp" color="#cdcdcd" h={linkIconHeight}/>
             </Center>
           </ChakraLink>
       </WrapItem>
       <WrapItem>
           <ChakraLink href="https://www.gitbook.com/" isExternal>
             <Center h="100%" margin="12px">
-              <SiGitbook 
-                color="#cdcdcd"
-                size={linkIconHeight}
-              />
+                <Image src="./images/icons/gitbook.svg" h={linkIconHeight}/>
             </Center>
           </ChakraLink>
       </WrapItem>
