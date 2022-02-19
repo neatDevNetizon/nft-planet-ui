@@ -1,9 +1,10 @@
-import { useState }				  from "react";
+import { useState }	  from "react";
 import { FaArrowAltCircleRight }  from "react-icons/fa";
 import { Box, 
-		 Tooltip, 
+		 // Tooltip, 
 		 Center, 
-		 VStack, Image }   			  from "@chakra-ui/react";
+		 VStack,
+		 Image }   			      from "@chakra-ui/react";
 import { Link }                   from "react-router-dom";
 import { Btn } 					  from "./btn"
 import Txt 						  from "./txt"
@@ -156,31 +157,48 @@ export default function Emperor(props) {
 				
 	const alt = <EmpTxt emperorTier={props.emperorTier} />
 				
-	const [nftImg, setNftImg] = useState(img);
+	// const [nftImg, setNftImg] = useState(alt);
 
+	const [hovered, setHovered] = useState(false);
+
+	const enterHoverHandler = () => {
+		setHovered(true);
+	}
+
+	const leaveHoverHandler = () => {
+		setHovered(false);
+	}
+	
 	return(
-		<Tooltip 
-				label={<Tip pixel={props.pixel} price={props.price} />} 
-				w={{base:"140px", sm:"150px", md:"160px", lg:"170px", xl:"180px",'2xl':"190px"}}
-				borderRadius={{base:"10px", lg:"15px", xl:"20px"}}
-				// bg="#171923"
-				bg="black"
-				closeOnClick={false}
-				onOpen={() => setNftImg(alt)}
-				onClose={() => setNftImg(img)}
-				placement="bottom"
-		>
+		// <Tooltip 
+		// 		label={<Tip pixel={props.pixel} price={props.price} />} 
+		// 		w={{base:"140px", sm:"150px", md:"160px", lg:"170px", xl:"180px",'2xl':"190px"}}
+		// 		borderRadius={{base:"10px", lg:"15px", xl:"20px"}}
+		// 		// bg="#171923"
+		// 		bg="black"
+		// 		closeOnClick={false}
+		// 		onOpen={() => setNftImg(alt)}
+		// 		onClose={() => setNftImg(img)}
+		// 		placement="bottom"
+		// >
+		// </Tooltip>
+		<VStack >
 			<Box 
 				bg="black"
 				w={{base:"140px", sm:"150px", md:"160px", lg:"170px", xl:"180px",'2xl':"190px"}}
 				borderRadius={{base:"10px", lg:"15px", xl:"20px"}}
-				margin={{base:"30px", sm:"35px", md:"40px", lg:"45px"}}
+				margin={{base:"0px 30px", sm:"0px 35px", md:"0px 40px", lg:"0px 45px"}}			
 				align="center"
+				onMouseEnter = {() => enterHoverHandler()}
+				onMouseLeave = {() => leaveHoverHandler()}
 			>
 				<Box padding={{base:"10px", sm:"11px", md:"13px", lg:"14px", xl:"16px",'2xl':"18px"}}>
 					<Box h={{base:"130px", sm:"135px", md:"145px", lg:"150px", xl:"155px",'2xl':"160px"}}>
 						<Center	h="100%">
-							{nftImg}
+							{ hovered
+								? alt
+								: img
+							}
 						</Center>
 					</Box>
 				</Box>
@@ -202,6 +220,23 @@ export default function Emperor(props) {
 					}
 				</Box>
 			</Box>
-		</Tooltip>
+			{ hovered
+				? <Box 
+					w={{base:"140px", sm:"150px", md:"160px", lg:"170px", xl:"180px",'2xl':"190px"}}
+					h={{base:"75px", sm:"80px", md:"85px", lg:"90px", xl:"95px",'2xl':"100px"}}
+					borderRadius={{base:"10px", lg:"15px", xl:"20px"}}
+					bg="black"
+				  >
+				  	<Center h="100%">
+						<Tip pixel={props.pixel} price={props.price} />
+					</Center>
+				  </Box>
+				: <Box 
+					w={{base:"140px", sm:"150px", md:"160px", lg:"170px", xl:"180px",'2xl':"190px"}}
+					h={{base:"75px", sm:"80px", md:"85px", lg:"90px", xl:"95px",'2xl':"100px"}}
+					bg="transparent"
+				  />
+			}
+		</VStack>
 	);
 }
