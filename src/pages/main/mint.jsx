@@ -8,12 +8,17 @@ export default function Mint(props) {
 
     return (
       <Box w="100%" h="100%">
-          <VStack align="center" justify="center">
+{/*        <Center h="100%">*/}
+          <VStack 
+            align="center" 
+            justify="center"
+          >
             <Box 
               w="100%" 
               h="20%"
               align="center"
-              paddingTop={{base:"10px", md:"0px"}}
+              // paddingTop={{base:"0px", lg:"0px"}}
+              // bg="tomato"
             >
               <Center w="90%" h="100%">
                 <Txt fontSize={{base:"16px", sm:"25px", lg:"30px", xl:"35px", "2xl":"40px"}}
@@ -25,13 +30,14 @@ export default function Mint(props) {
             <Box
               w={{base:"60%", md:"100%"}}
               h="80%"
-              paddingTop={{base:"10px", md:"30px", lg:"40px", xl:"50px"}}
+              paddingTop={{base:"5px", lg:"17px"}}
               paddingBottom={{base:"200px", md:"0px"}}
               align="center"
             >
                   <Emperors isMint={true} spacing={{base:"40px", md:"20px", lg:"40px", xl:"50px", "2xl":"60px"}}/>
             </Box>
-        </VStack>
+          </VStack>
+{/*        </Center>*/}
       </Box>
     );
 }

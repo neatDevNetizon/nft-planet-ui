@@ -36,6 +36,8 @@ export default function Collection(props, ref) {
             <Box
               width="100%"
               height="80%"
+              paddingTop={{base:"5px", lg:"17px"}}
+              align="center"
             >
               <Nfts nftIds={wallet} />
             </Box>

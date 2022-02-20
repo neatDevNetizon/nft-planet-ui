@@ -25,7 +25,7 @@ function Nfts(props) {
   // }, [count, items]);
 
   return (
-    <Box w={{base:"90%", lg:"80%"}} align="center" paddingTop="20px">
+    <Box w={{base:"90%", lg:"80%"}} align="center">
         <Wrap 
             spacing={{base:"50px", sm:"60px", md:"70px", lg:"80px", xl:"60px", "2xl":"80px"}} 
             align="center" 

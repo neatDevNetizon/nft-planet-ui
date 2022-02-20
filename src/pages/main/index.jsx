@@ -206,8 +206,8 @@ function Main() {
       </Box>
       <Box 
         pos="fixed"
-        top={{base:"120px", md:"100px"}}
-        bottom={{base:"60px", md:"100px"}}
+        top={{base:"120px", lg:"100px"}}
+        bottom={{base:"60px", lg:"100px"}}
         w="100%"
         align="center"
         overflowY="hidden"
@@ -222,9 +222,9 @@ function Main() {
         >
           {isModalOpen
             ? ((mainRoute === "mint")
-                ? <div ref={ref}><Mint /></div>
+                ? <Box ref={ref} w="100%" h="100%"><Mint /></Box>
                 : (mainRoute === "collection")
-                    ? <div ref={ref}><Collection /></div>
+                    ? <Box ref={ref}  w="100%" h="100%"><Collection /></Box>
                     : <></>)
             : <></>
           }
