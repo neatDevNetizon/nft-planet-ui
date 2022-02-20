@@ -206,7 +206,7 @@ function Main() {
       </Box>
       <Box 
         pos="fixed"
-        top={{base:"120px", md:"160px"}}
+        top={{base:"120px", md:"100px"}}
         bottom={{base:"60px", md:"100px"}}
         w="100%"
         align="center"
