@@ -1,5 +1,5 @@
 import Web3                   from "web3";
-import contract               from "../contracts/artifacts/Emp.json";
+import contract               from "../config/Emp.json";
 import { GetIsConnected }     from "./useIsConnected";
 
 const address = process.env.REACT_APP_EMP_CONTRACT_ADDRESS;
