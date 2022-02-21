@@ -5,7 +5,8 @@ import { AiOutlineLogout,
 		 		 AiOutlineLogin }       from "react-icons/ai";
 import { Btn }					        from "./btn";
 import { btnIconSize }          from "./componentSize";
-import { SetIsConnected }   	  from "../utils/useIsConnected";
+import { SetIsConnected,
+				 GetIsConnected }   	  from "../utils/useIsConnected";
 
 
 const switchNetwork = async () => {
@@ -41,7 +42,7 @@ function MetamaskBtn () {
 
 	const [ btnBg, setBtnBg ] = useState();
 
-	const [ isConnected, setIsConnected ] = useState(false);
+	const [ isConnected, setIsConnected ] = useState(GetIsConnected());
 
 	const { status, connect, account, chainId } = useMetaMask();
 
