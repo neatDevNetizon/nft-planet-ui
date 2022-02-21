@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.7+commit.e28d00a7"
+		"version": "0.8.11+commit.d7f03943"
 	},
 	"language": "Solidity",
 	"output": {
@@ -365,19 +365,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "notRevealedURI",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "onlyNotBlacklisted",
 				"outputs": [
 					{
@@ -426,26 +413,6 @@
 				"name": "renounceOwnership",
 				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "reveal",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "revealed",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -614,19 +581,6 @@
 					}
 				],
 				"name": "setNftPerAddressLimit",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "_notRevealedURI",
-						"type": "string"
-					}
-				],
-				"name": "setNotRevealedURI",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -952,10 +906,10 @@
 					"notice": "baseMetaURI: base URI of metadata metaExtension: extenstion of metadata(*.json)"
 				},
 				"constructor": {
-					"notice": "param _name: token name param _symbol: token symbol param _baseMetaURI: initial metadata base URI param _notRevealedURI: initial "
+					"notice": "param _name: token name param _symbol: token symbol"
 				},
 				"contractPaused()": {
-					"notice": "contractPaused: not available Emp contract revealed: available access to metadata notRevealedURI: returning URI when user isn't available access to metadata"
+					"notice": "contractPaused: not available Emp contract"
 				},
 				"firstTier()": {
 					"notice": "firstTier : maximum index for National Emperor tier. minimum index is 1 secondTier: maximum index for Continent Emperor tier. minimum index is firstTier+1 thirdTier : maximum index for World Emperor tier. minimum index is secondTier+1"
@@ -981,7 +935,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Emp.sol": "Emp"
+			"Emp.sol": "Emp"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -1099,12 +1053,12 @@
 				"dweb:/ipfs/QmfYuZxRfx2J2xdk4EXN7jKg4bUYEMTaYk9BAw9Bqn4o2Y"
 			]
 		},
-		"contracts/Emp.sol": {
-			"keccak256": "0xda13786c8671a427a7b47cb328b0ec588ad120f7905f2967e16ef1ecf876de71",
+		"Emp.sol": {
+			"keccak256": "0xfa9699fd8c702a0b1428e8645cfdfe18fb4b6d7cffaa551d4e159d4fbff846c3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9e2489bce25e5ec86a856f9b18e3dca853216bb49bcb72c7de45a0fee817748b",
-				"dweb:/ipfs/QmVGQ6QZBLMg9qtMMjafQb2GsGmZRnEvmi3uq15Wzcwk4s"
+				"bzz-raw://d2f95f7d10f589057e90bf1e52ad32175839416a10de2caa4df05556da34db30",
+				"dweb:/ipfs/Qmdd9BA6nNP6eKguWzByHyxLJQ93PHh55PzQaonryGnZwG"
 			]
 		}
 	},

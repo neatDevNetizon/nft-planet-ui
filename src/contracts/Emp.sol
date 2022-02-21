@@ -31,18 +31,14 @@ contract Emp is ERC721Enumerable, Ownable{
     /**
      * mintPrice<*>: price for mint <*> Emperor token
      */
-    uint256 public mintPriceFirstTier  = 0.0000001 ether;
-    uint256 public mintPriceSecondTier = 0.000001 ether;
-    uint256 public mintPriceThirdTier  = 0.00001 ether;
+    uint256 public mintPriceFirstTier  = 0.99 ether;
+    uint256 public mintPriceSecondTier = 9.99 ether;
+    uint256 public mintPriceThirdTier  = 99.99 ether;
 
     /**
      * contractPaused: not available Emp contract
-     * revealed: available access to metadata
-     * notRevealedURI: returning URI when user isn't available access to metadata
      */
     bool public contractPaused = false;
-    bool public revealed = false;
-    string public notRevealedURI = "https://nftplanet.on.fleek.co";
 
     /**
      * nftPerAddressLimit: mint amount of token per address limit
@@ -70,8 +66,6 @@ contract Emp is ERC721Enumerable, Ownable{
     /**
      * param _name: token name
      * param _symbol: token symbol
-     * param _baseMetaURI: initial metadata base URI
-     * param _notRevealedURI: initial 
      */
     constructor(
         string memory _name,
@@ -174,13 +168,6 @@ contract Emp is ERC721Enumerable, Ownable{
         contractPaused = _contractPaused;
     }
 
-    function reveal() public onlyOwner() {
-        revealed = true;
-    }
-
-    function setNotRevealedURI(string memory _notRevealedURI) public onlyOwner() {
-        notRevealedURI = _notRevealedURI;
-    }
 
     function setNftPerAddressLimit(uint256 _limit) public onlyOwner(){
         nftPerAddressLimit = _limit;
@@ -218,9 +205,6 @@ contract Emp is ERC721Enumerable, Ownable{
 
     function tokenURI(uint256 tokenId) public view virtual override returns(string memory){
         require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
-        if(revealed == false){
-            return notRevealedURI;
-        }
         string memory currentBaseURI = baseMetaURI;
         return bytes(currentBaseURI).length > 0 ? string(abi.encodePacked(currentBaseURI, tokenId.toString(), metaExtension)) : "";
     }

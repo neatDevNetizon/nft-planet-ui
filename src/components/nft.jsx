@@ -10,8 +10,6 @@ function Nft(props) {
 
 	const imSrc = imgBaseURI + props.tokenId + ".png";
 
-	// const fontFamily = "arial,ｍｓ ｐゴシック,ms pgothic,돋움,dotum,helvetica,sans-serif";
-
 	return(
 		<Box bg="black"
 			 width={{base:"160px", sm:"170px", md:"180px", lg:"190px", xl:"200px", "2xl":"215px"}}

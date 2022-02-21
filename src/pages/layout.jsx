@@ -11,7 +11,6 @@ function Layout() {
       bgSize="100% 100%"
       bgAttachment="fixed"
       minHeight="100vh"
-      // width={window.innerWidth}
     >
       <Outlet />
     </Box>

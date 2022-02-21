@@ -50,9 +50,11 @@ function EmpTxt(props) {
 
 function Tip(props) {
 	
-	const pixelNumber = props.pixel + " PIXEL"
+	const priceUint = process.env.REACT_APP_CURRENCY_SYMBOL;
 
-	const priceInMATIC = props.price + " MATIC"
+	const pixelNumber = props.pixel + " PIXEL";
+
+	const priceInMATIC = props.price + " " + priceUint;
 	
 	return(
 		<Box margin="10px">

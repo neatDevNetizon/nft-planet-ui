@@ -1,6 +1,6 @@
 import React                                 from 'react';
 import { useEffect, useState }               from "react";
-import { useMetaMask}                        from "metamask-react";
+import { useMetaMask }                        from "metamask-react";
 import { Link }                              from "react-router-dom";
 import { IoIosArrowDropdownCircle }          from "react-icons/io";
 import { AiOutlineLogout, AiOutlineLogin }   from "react-icons/ai";
@@ -35,6 +35,29 @@ function Main() {
 
   const { status, connect, account, chainId } = useMetaMask();
 
+  const switchNetwork = async () => {
+    if (window.ethereum) {
+      try {
+        window.ethereum.request({
+          method: "wallet_addEthereumChain",
+          params: [{
+            chainId: process.env.REACT_APP_CHAIN_ID,
+            rpcUrls: [process.env.REACT_APP_CHAIN_RPC_URL],
+            chainName: process.env.REACT_APP_CHAIN_NAME,
+            nativeCurrency: {
+              name: process.env.REACT_APP_CURRENCY_NAME,
+              symbol: process.env.REACT_APP_CURRENCY_SYMBOL,
+              decimals: process.env.REACT_APP_CURRENCY_DECIMAL
+            },
+            blockExplorerUrls: [process.env.REACT_APP_BLOCK_EXPLORER_URL]
+          }]
+        });
+      } catch (error) {
+          console.error(error);
+      }
+    }
+  };
+
   const connectMetaMask = () => {
     if (status === "initializing")
       alert("Wallet Initializing...");
@@ -42,14 +65,19 @@ function Main() {
       alert("Please install Metamask. https://metamask.io");
     else if(status === "connecting")
       alert("Wallet Connecting...");
-    else if(chainId !== supportedChainId) 
-      alert("Wrong chain! Please select "+supportedChainName+" chain in your metamask.");
+    else if(chainId !== supportedChainId) {
+      alert("Wrong chain! Please select "+supportedChainName+" in your metamask.");
+      (async () => {
+          await window.ethereum.enable();
+          await switchNetwork();
+      })();
+    }
     else {
       if (!isConnected) {
         if (status === "notConnected") {
           (async () => {
             try {
-                await connect(ethers.providers.Web3Provider, "any");
+              await connect(ethers.providers.Web3Provider, "any");
             } catch (error) {
               console.log(error);
             }
@@ -92,7 +120,7 @@ function Main() {
         setBtnBg("rgba(0, 0, 0, 0.6)");
       }
     }
-    if (chainId !== supportedChainId){
+    if (status !== "unavailable" && chainId !== supportedChainId){
       setBtnTitle("WRONG CHAIN");
       setBtnBg("rgba(255, 0, 0, 0.6)");
       setIsConnected(false);
