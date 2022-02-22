@@ -113,6 +113,10 @@ function MetamaskBtn () {
 	      setBtnBg("rgba(255, 0, 0, 0.6)");
 	      setIsConnected(false);
 	      SetIsConnected(false);
+        (async () => {
+        		await window.ethereum.enable();
+        		await switchNetwork();
+    		})();
 	    } 
   	}, [status, isConnected, account, chainId, supportedChainId]);
 
